@@ -4,11 +4,9 @@ import com.example.gestionvente.entites.CategorieProduit;
 import com.example.gestionvente.services.CategorieProduitService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
-import java.sql.SQLException;
 import java.util.regex.Pattern;
 
 public class ModiferCategorieController {

@@ -79,7 +79,6 @@ public class AfficheListCategorieController implements Initializable {
         Pane newLoadedPane = null;
         try {
 
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficherDetailleCategorie.fxml"));
             newLoadedPane = loader.load();
             AfficherDetailleCategorieController c = loader.getController();
@@ -122,7 +121,6 @@ public class AfficheListCategorieController implements Initializable {
     public void modifier(ActionEvent e){
         Pane newLoadedPane = null;
         try {
-
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ModiferCategorie.fxml"));
             newLoadedPane = loader.load();
