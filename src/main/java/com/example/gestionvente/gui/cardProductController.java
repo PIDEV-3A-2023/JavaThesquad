@@ -45,7 +45,9 @@ public class cardProductController implements Initializable {
         this.prodData=prodData;
         prod_name.setText(prodData.getNom());
         prod_price.setText(String.valueOf(prodData.getPrix()));
-        image=new Image(prodData.getImage(),190,94,false,true);
+        String path ="File: "+ prodData.getImage() ;
+        System.out.println(path);
+        image=new Image(path,190,94,false,true);
         prod_imageView.setImage(image);
     }
 
