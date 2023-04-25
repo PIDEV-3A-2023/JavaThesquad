@@ -8,15 +8,25 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AjoutProduitController implements Initializable {
+
+
+
+
 
     @FXML
     private ComboBox<CategorieProduit> category;
@@ -26,7 +36,14 @@ public class AjoutProduitController implements Initializable {
 
 
     @FXML
-    private TextField image;
+    private ImageView image;
+
+    @FXML
+    private Button importImage;
+
+
+//    @FXML
+//    private TextField image;
 
     @FXML
     private TextField nomProduit;
@@ -38,18 +55,45 @@ public class AjoutProduitController implements Initializable {
 
     @FXML
     private TextField prix;
+    //private Image imagev;
+    private File selectedImageFile;
+    Produit produit =new Produit();
+    String path=produit.getImage();
+
     ProduitService produitService=new ProduitService();
+
+
+
+
+
+    public void inventoryImportBtn() {
+
+        FileChooser openFile = new FileChooser();
+        openFile.getExtensionFilters().add(new FileChooser.ExtensionFilter("Open Image File", "*png", "*jpg"));
+
+        selectedImageFile = openFile.showOpenDialog(pane.getScene().getWindow());
+
+        if (selectedImageFile != null) {
+            image.setImage(new Image(selectedImageFile.toURI().toString(), 134, 133, false, true));
+
+//            path = file.getAbsolutePath();
+//            imagev = new Image(file.toURI().toString(), 134, 133, false, true);
+//
+//            image.setImage(imagev);
+        }
+    }
+
 
     @FXML
     void ajouter(ActionEvent event) {
         //Recupere les valeurs des champs
         String nom=nomProduit.getText();
         String desc=descProduit.getText();
-        String img=image.getText();
+       // String img=image.getText();
         CategorieProduit nomCategorie=category.getValue();
         Float prixProduit=Float.parseFloat(prix.getText());
 
-        if (nom.isEmpty() || desc.isEmpty() || img.isEmpty() || prixProduit.isNaN()) {
+        if (nom.isEmpty() || desc.isEmpty() || prixProduit.isNaN()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erreur");
             alert.setHeaderText(null);
@@ -57,6 +101,7 @@ public class AjoutProduitController implements Initializable {
             alert.showAndWait();
             return;
         }
+
 
         if (nom == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -75,8 +120,18 @@ public class AjoutProduitController implements Initializable {
             alert.showAndWait();
             return;
         }
+        if (selectedImageFile == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez choisir une image !");
+            alert.showAndWait();
+            return;
+        }
 
-        Produit produit = new Produit(nomProduit.getText(),descProduit.getText(),image.getText(),Float.parseFloat(prix.getText()),category.getValue());
+
+        String imagePath = selectedImageFile.toString();
+        Produit produit = new Produit(nomProduit.getText(),descProduit.getText(),imagePath,Float.parseFloat(prix.getText()),category.getValue());
         System.out.println(produit);
         produitService.ajouter(produit);
 
@@ -84,14 +139,14 @@ public class AjoutProduitController implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Succès");
         alert.setHeaderText(null);
-        alert.setContentText("Exercice ajouté avec succès !");
+        alert.setContentText("Produit ajouté avec succès !");
         alert.showAndWait();
 
 
         // Effacement des champs après ajout
         nomProduit.setText("");
         descProduit.setText("");
-        image.setText("");
+        //image.setText("");
         prix.setText("");
         category.setValue(null); // Effacement de la sélection dans le ComboBox
 

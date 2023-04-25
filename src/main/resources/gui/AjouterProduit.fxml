@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
@@ -13,7 +15,7 @@
 
 <Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="517.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionvente.gui.AjoutProduitController">
     <children>
-        <Rectangle arcHeight="20.0" arcWidth="20.0" height="465.0" layoutX="24.0" layoutY="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="336.0">
+        <Rectangle arcHeight="20.0" arcWidth="20.0" height="494.0" layoutX="10.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="449.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -30,26 +32,31 @@
                </stops>
             </LinearGradient>
          </fill></Rectangle>
-        <Label layoutX="46.0" layoutY="310.0" text="image" textFill="#3f5e6d" />
-        <Label layoutX="41.0" layoutY="242.0" text="nomProduit" textFill="#3f5e6d" />
-        <Label layoutX="131.0" layoutY="79.0" prefHeight="27.0" prefWidth="213.0" text="Ajout Produit" textFill="#3f5e6d">
+        <Label layoutX="62.0" layoutY="373.0" text="image" textFill="#3f5e6d" />
+        <Label layoutX="47.0" layoutY="142.0" text="nomProduit" textFill="#3f5e6d" />
+        <Label layoutX="172.0" layoutY="25.0" prefHeight="27.0" prefWidth="213.0" text="Ajout Produit" textFill="#3f5e6d">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
-        <Label layoutX="57.0" layoutY="106.0" prefHeight="47.0" prefWidth="270.0" text=" . . . . . . . . . . . . . . . . .  . . " textFill="#3f5e6d">
+        <Label layoutX="117.0" layoutY="39.0" prefHeight="47.0" prefWidth="270.0" text=" . . . . . . . . . . . . . . . . .  . . " textFill="#3f5e6d">
             <font>
                 <Font size="27.0" />
             </font>
         </Label>
-        <Label layoutX="53.0" layoutY="345.0" text="prix" textFill="#3f5e6d" />
-        <Label layoutX="42.0" layoutY="278.0" text="Description" textFill="#3f5e6d" />
-        <ComboBox fx:id="category" layoutX="223.0" layoutY="380.0" prefHeight="25.0" prefWidth="81.0" />
-        <Label layoutX="45.0" layoutY="384.0" text="categorie" textFill="#3f5e6d" />
-      <TextField fx:id="image" layoutX="178.0" layoutY="306.0" />
-      <TextField fx:id="nomProduit" layoutX="178.0" layoutY="238.0" />
-      <TextField fx:id="descProduit" layoutX="178.0" layoutY="274.0" />
-      <TextField fx:id="prix" layoutX="178.0" layoutY="341.0" />
-      <Button layoutX="278.0" layoutY="79.0" mnemonicParsing="false" onAction="#ajouter" text="Ajouter" />
+        <Label layoutX="59.0" layoutY="250.0" text="prix" textFill="#3f5e6d" />
+        <Label layoutX="53.0" layoutY="198.0" text="Description" textFill="#3f5e6d" />
+        <ComboBox fx:id="category" layoutX="172.0" layoutY="300.0" prefHeight="25.0" prefWidth="81.0" />
+        <Label layoutX="55.0" layoutY="304.0" text="categorie" textFill="#3f5e6d" />
+      <TextField fx:id="nomProduit" layoutX="172.0" layoutY="138.0" />
+      <TextField fx:id="descProduit" layoutX="172.0" layoutY="194.0" />
+      <TextField fx:id="prix" layoutX="172.0" layoutY="247.0" />
+      <Button layoutX="277.0" layoutY="26.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="25.0" prefWidth="87.0" text="Ajouter" />
+      <AnchorPane layoutX="166.0" layoutY="337.0" prefHeight="127.0" prefWidth="134.0">
+         <children>
+            <ImageView fx:id="image" fitHeight="133.0" fitWidth="134.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="importImage" layoutX="285.0" layoutY="369.0" mnemonicParsing="false" onAction="#inventoryImportBtn" prefHeight="25.0" prefWidth="87.0" text="Import" />
     </children>
 </Pane>
