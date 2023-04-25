@@ -96,7 +96,7 @@ public class HealthConnect {
 
      //*******************************************
      // les mois sont indexés à partir de 0 donc 0 c'est le mois de janvier
-     Date date = new Date(2023 - 1900, 4, 9);
+     Date date = new Date(2022 - 1900, 4, 9);
           //modifier les champs de l'espace   
        Espace space2=new Espace();
           space2.setId(37);
@@ -119,7 +119,7 @@ public class HealthConnect {
     "terrain volley rades", 
     "terrain volley dispo", 
     "jardinjapo-63f73150c0003.jpg", 
-    "rade-b*", 
+    "rade", 
     "disponible",
     date, 
     345.4,

@@ -127,6 +127,32 @@ public void redirecttoupdate(ActionEvent e){
             
             
             ModifierCategorieLocationFXMLController m = loader.getController();
+            m.pass(tableviewcat.getSelectionModel().getSelectedItem());
+            
+          
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+        anchorl.getChildren().clear();
+        anchorl.getChildren().add(newLoadedPane);
+        
+        
+        
+
+    }
+public void redirectespace(ActionEvent e){
+        Pane newLoadedPane = null;
+      
+        
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/AfficherListeEspaceFXML.fxml"));
+            newLoadedPane = loader.load();
+            
+            
+            AfficherListeEspaceFXMLController a = loader.getController();
            
             
           

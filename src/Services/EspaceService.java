@@ -114,13 +114,7 @@ public boolean modifierEspace(Espace es) throws SQLException {
             System.out.println("Erreur : L'adresse ne doit pas contenir de tirets ni de caractères spéciaux.");
             return false;
         }
-        // Vérification de la date
-        LocalDate currentDate = LocalDate.now(); // Date actuelle sans heure
-        LocalDate tarifHoraireDate = es.getTarifhoraire().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        if (tarifHoraireDate.isBefore(currentDate)) {
-            System.out.println("Erreur : La date ne doit pas être dans le passé.");
-            return false;
-        }
+       
 
 
         PreparedStatement statement = conx.prepareStatement(req);

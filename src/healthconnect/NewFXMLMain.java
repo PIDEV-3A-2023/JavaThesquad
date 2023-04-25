@@ -30,7 +30,7 @@ Stage stage;
         
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Categorie location");
+        stage.setTitle("catégorie de l'espace ");
         stage.show();
     }
     public static void main(String[] args) {

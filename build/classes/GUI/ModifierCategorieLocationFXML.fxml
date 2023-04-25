@@ -5,10 +5,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorm" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.ModifierCategorieLocationFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchorm" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.ModifierCategorieLocationFXMLController">
     <stylesheets>
         <URL value="@modifiercategorielocationfxml.css" />
     </stylesheets>
@@ -32,5 +33,6 @@
       <TextArea fx:id="textareaDescmod" layoutX="186.0" layoutY="148.0" prefHeight="100.0" prefWidth="200.0" />
       <Button fx:id="btnmod" layoutX="186.0" layoutY="289.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
       <Button layoutX="267.0" layoutY="289.0" mnemonicParsing="false" text="revenir" />
+      <ImageView fitHeight="129.0" fitWidth="146.0" layoutX="436.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -35,5 +35,6 @@
       <Button fx:id="btnajouter" layoutX="494.0" layoutY="138.0" mnemonicParsing="false" onAction="#redirect" prefHeight="25.0" prefWidth="70.0" text="ajouter" />
       <Button fx:id="btnmodifier" layoutX="494.0" layoutY="175.0" mnemonicParsing="false" onAction="#redirecttoupdate" prefHeight="25.0" prefWidth="70.0" text="modifier" />
       <Button fx:id="btnsupprimer" layoutX="494.0" layoutY="214.0" mnemonicParsing="false" onAction="#supprimer" text="supprimer" />
+      <Button fx:id="btnespace" layoutX="503.0" layoutY="334.0" mnemonicParsing="false" onAction="#redirectespace" text="espace" />
    </children>
 </AnchorPane>

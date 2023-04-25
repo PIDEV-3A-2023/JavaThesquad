@@ -15,6 +15,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -22,6 +24,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -99,23 +102,20 @@ private void ajoutCategorielocation(ActionEvent event) {
         }
     }
 }
-public void rediriger(ActionEvent e){
-        Pane newLoadedPane = null;
-        try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/CategorieLocationFXML.fxml"));
-            
-            newLoadedPane = loader.load();
-            CategorieLocationFXMLController a = loader.getController();
           
 
-        } catch (IOException e1) {
-            // TODO Auto-generated catc1h block
-            e1.printStackTrace();
-        }
-        anchor.getChildren().clear();
-        anchor.getChildren().add(newLoadedPane);
-
+        
+@FXML
+    private void redirigerliste(ActionEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/CategorieLocationFXML.fxml"));
+    Parent root;
+    try {
+    root = loader.load();
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.show();
+    } catch (IOException e) {
+    e.printStackTrace();
     }
-    
+    }
 }
