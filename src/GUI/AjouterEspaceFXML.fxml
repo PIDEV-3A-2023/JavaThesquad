@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorajes" prefHeight="536.0" prefWidth="678.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEspaceFXMLController">
+    <stylesheets>
+        <URL value="@ajouterespacefxml.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="labelajoutes" layoutX="52.0" layoutY="28.0" text="Ajouter espace">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfieldnom" layoutX="112.0" layoutY="73.0" prefHeight="25.0" prefWidth="174.0" />
+      <TextField fx:id="textfieldadress" layoutX="112.0" layoutY="209.0" prefHeight="25.0" prefWidth="174.0" />
+      <ImageView fx:id="imgviewes" fitHeight="150.0" fitWidth="200.0" layoutX="440.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+      <DatePicker fx:id="datepickertarif" layoutX="135.0" layoutY="261.0" />
+      <TextField fx:id="textfieldprix" layoutX="135.0" layoutY="302.0" prefHeight="25.0" prefWidth="174.0" />
+      <ComboBox fx:id="comboboxcat" layoutX="135.0" layoutY="354.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label fx:id="labelnomes" layoutX="40.0" layoutY="73.0" prefHeight="17.0" prefWidth="47.0" text="Nom">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelcaract" layoutX="37.0" layoutY="106.0" text="caracteristique">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelimg" layoutX="519.0" layoutY="60.0" text="image">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labeladresse" layoutX="35.0" layoutY="209.0" text="adresse">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labeldispo" layoutX="42.0" layoutY="168.0" text="Dispo">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labeltarif" layoutX="32.0" layoutY="260.0" text="Tarif horaire">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelprix" layoutX="31.0" layoutY="302.0" text="prix location">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelcat" layoutX="29.0" layoutY="354.0" text="catégorie">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="btna" layoutX="145.0" layoutY="415.0" mnemonicParsing="false" onAction="#ajoutEspace" prefHeight="25.0" prefWidth="145.0" text="enregistrer" />
+      <TextField fx:id="imagetf" layoutX="484.0" layoutY="290.0" />
+      <TextArea fx:id="textareacarac" layoutX="161.0" layoutY="109.0" prefHeight="56.0" prefWidth="200.0" />
+      <TextField fx:id="dispo" layoutX="112.0" layoutY="169.0" prefHeight="25.0" prefWidth="174.0" />
+      <Button layoutX="519.0" layoutY="354.0" mnemonicParsing="false" onAction="#filechooseImage" text="choisir file" />
+      <Button fx:id="btnannuler" layoutX="313.0" layoutY="415.0" mnemonicParsing="false" onAction="#redirigerliste" text="annuler" />
+   </children>
+</AnchorPane>

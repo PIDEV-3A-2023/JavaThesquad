@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchores" prefHeight="539.0" prefWidth="746.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherListeEspaceFXMLController">
+    <stylesheets>
+        <URL value="@afficherlisteespacefxml.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tablespace" layoutX="17.0" layoutY="129.0" prefHeight="203.0" prefWidth="711.0">
+        <columns>
+          <TableColumn fx:id="idspace" prefWidth="49.0" text="id" />
+          <TableColumn fx:id="nomesp" prefWidth="68.0" text="nom" />
+            <TableColumn fx:id="caract" prefWidth="103.0" text="caracteristique" />
+            <TableColumn fx:id="img" prefWidth="85.0" text="image" />
+            <TableColumn fx:id="adresse" prefWidth="56.0" text="adresse" />
+            <TableColumn fx:id="dispo" prefWidth="79.0" text="dispo" />
+            <TableColumn fx:id="tarif" prefWidth="85.0" text="tarifhoraire" />
+            <TableColumn fx:id="prixloc" prefWidth="75.0" text="prixlocation" />
+            <TableColumn fx:id="cat" prefWidth="110.0" text="categorie" />
+        </columns>
+      </TableView>
+      <Label fx:id="labeles" layoutX="40.0" layoutY="14.0" text="Liste des espaces">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajouteres" layoutX="111.0" layoutY="359.0" mnemonicParsing="false" onAction="#redirect" text="ajouter" />
+      <Button fx:id="modifieres" layoutX="221.0" layoutY="359.0" mnemonicParsing="false" onAction="#redirigermod" text="modifier" />
+      <Button fx:id="suppespace" layoutX="322.0" layoutY="359.0" mnemonicParsing="false" onAction="#supprimerespace" text="supprimer" />
+      <TextField fx:id="txtfieldrecherche" layoutX="510.0" layoutY="85.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label fx:id="labelrecherche" layoutX="412.0" layoutY="84.0" text="recherche">
+        
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+        <Button fx:id="tri" layoutX="59.0" layoutY="72.0" mnemonicParsing="false" text="Trier par nom" />
+   </children>
+</AnchorPane>
