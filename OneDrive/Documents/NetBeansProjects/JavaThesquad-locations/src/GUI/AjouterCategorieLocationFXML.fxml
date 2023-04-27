@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCategorieLocationFXMLController">
+    <stylesheets>
+        <URL value="@ajoutercategorielocationfxml.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane fx:id="anchor" layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;">
+         <children>
+            <TextArea fx:id="textareaDesc" layoutX="196.0" layoutY="200.0" prefHeight="89.0" prefWidth="209.0" />
+            <Button fx:id="revenir" layoutX="274.0" layoutY="315.0" mnemonicParsing="false" onAction="#redirigerliste" text="revenir" />
+         </children></AnchorPane>
+      <Label fx:id="labelnom" layoutX="51.0" layoutY="129.0" text="Nom :">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtfieldNom" layoutX="197.0" layoutY="134.0" />
+      <Label fx:id="labeldescription" layoutX="47.0" layoutY="206.0" text="Description : ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn" layoutX="197.0" layoutY="314.0" mnemonicParsing="false" onAction="#ajoutCategorielocation" text="Ajouter" />
+      <Label fx:id="titrecatajout" layoutX="51.0" layoutY="50.0" text="Ajouter catégorie">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
