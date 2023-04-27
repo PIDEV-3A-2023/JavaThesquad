@@ -47,22 +47,35 @@ public class cardProductController implements Initializable {
     private Image image;
     private int qty;
     private Alert alert;
+    private String prod_image;
 
     public cardProductController(){
         conx= MyDB.getInstance().getConx();
 
     }
 
-    public void setData(Produit prodData){
-        this.prodData=prodData;
-        prod_name.setText(prodData.getNom());
-        prod_price.setText(String.valueOf(prodData.getPrix()));
-        String path ="File: "+ prodData.getImage() ;
-        System.out.println(path);
-        image=new Image(path,190,94,false,true);
-        prod_imageView.setImage(image);
-        pr=prodData.getPrix();
-    }
+//    public void setData(Produit prodData){
+//        this.prodData=prodData;
+//        prod_name.setText(prodData.getNom());
+//        prod_price.setText(String.valueOf(prodData.getPrix()));
+//        prod_image=prodData.getImage();
+//        String path ="File: "+ prodData.getImage() ;
+//        System.out.println(path);
+//        image=new Image(path,190,94,false,true);
+//        prod_imageView.setImage(image);
+//        pr=prodData.getPrix();
+//    }
+public void setData(Produit prodData) {
+    this.prodData = prodData;
+    prod_image = prodData.getImage();
+    prod_name.setText(prodData.getNom());
+    prod_price.setText(String.valueOf(prodData.getPrix()));
+    String path = "File:" + prodData.getImage();
+    image = new Image(path, 190, 94, false, true);
+    prod_imageView.setImage(image);
+    pr = prodData.getPrix();
+
+}
 
     public void setQuantite(){
         spin=new SpinnerValueFactory.IntegerSpinnerValueFactory(0,100,0); //a spinner that has a range of integers from 0 to 100, and an initial value of 0

@@ -9,20 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ProduitFrontController implements Initializable {
@@ -33,7 +28,14 @@ public class ProduitFrontController implements Initializable {
 
 
     @FXML
+    private Label totalPrix;
+
+    @FXML
     private TableColumn<Produit,Integer> menuColProduitQuantite;
+
+
+    @FXML
+    private Button menu_removeBtn;
 
     @FXML
     private Pane menuForm;
@@ -53,6 +55,10 @@ public class ProduitFrontController implements Initializable {
     private ObservableList<Produit> cardListData= FXCollections.observableArrayList();
     public Connection conx;
     public Statement stm;
+    private double totalP;
+    private int getid;
+    private Alert alert;
+
     CategorieProduitService categorieProduitService =new CategorieProduitService();
     public ProduitFrontController(){
         conx= MyDB.getInstance().getConx();
@@ -107,8 +113,53 @@ public class ProduitFrontController implements Initializable {
     }
 
     public void menuDisplayTotal(){
-        String total="SELECT COUNT(prix) from commande ";
+        try{
+            String total="SELECT sum(prix) from commande ";
+            stm=conx.createStatement();
+            ResultSet rs =stm.executeQuery(total);
+            if (rs.next()){
+                 totalP=rs.getDouble("SUM(prix)");
 
+            }
+            totalPrix.setText("$"+totalP);
+
+        }catch (SQLException exception){
+            System.out.println(exception.getMessage());
+        }
+
+    }
+    public void menuselectedOrder(){
+        //renvoie l'élément actuellement sélectionné dans le modèle de sélection. Ici,
+        Produit produit=menuTableView.getSelectionModel().getSelectedItem();
+        int num=menuTableView.getSelectionModel().getSelectedIndex();
+        if((num -1)<-1)return;
+        getid=produit.getId();
+    }
+    public void menuRemoveBtn(){
+        if(getid==0){
+            alert=new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Message");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select the item you want to remove");
+            alert.showAndWait();
+        }else {
+            String delete="DELETE FROM Commande WHERE ID ="+getid;
+            try {
+                alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Confirmation message");
+                alert.setHeaderText(null);
+                alert.setContentText("Are you want sure to delete this product");
+                Optional<ButtonType> option=alert.showAndWait();
+                if (option.get().equals(ButtonType.OK)){
+                    PreparedStatement statement=conx.prepareStatement(delete);
+                    statement.executeUpdate();
+                }
+
+
+            }catch (Exception exception){
+                exception.printStackTrace();
+            }
+        }
     }
     public ObservableList<Produit> menuGetOrder(){
         ObservableList<Produit> listData=FXCollections.observableArrayList();
@@ -151,5 +202,6 @@ public class ProduitFrontController implements Initializable {
         menuDisplayCard();
         menuGetOrder();
         menuShowOrderData();
+        menuDisplayTotal();
     }
 }
