@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -26,13 +27,13 @@ import java.util.ResourceBundle;
 
 public class ProduitFrontController implements Initializable {
     @FXML
-    private TableColumn<?, ?> menuColProduitName;
+    private TableColumn<Produit,Float> menuColProduitPrix;
+    @FXML
+    private TableColumn<Produit,String> menuColProduitName;
+
 
     @FXML
-    private TableColumn<?, ?> menuColProduitPrix;
-
-    @FXML
-    private TableColumn<?, ?> menuColProduitQuantite;
+    private TableColumn<Produit,Integer> menuColProduitQuantite;
 
     @FXML
     private Pane menuForm;
@@ -44,7 +45,7 @@ public class ProduitFrontController implements Initializable {
     private ScrollPane menuScrollPane;
 
     @FXML
-    private TableView<?> menuTableView;
+    private TableView<Produit> menuTableView;
 
     @FXML
     private Label menuTot;
@@ -105,8 +106,50 @@ public class ProduitFrontController implements Initializable {
         }
     }
 
+    public void menuDisplayTotal(){
+        String total="SELECT COUNT(prix) from commande ";
+
+    }
+    public ObservableList<Produit> menuGetOrder(){
+        ObservableList<Produit> listData=FXCollections.observableArrayList();
+        try {
+            String sql = "SELECT * FROM commande";
+            stm=conx.createStatement();
+            ResultSet rs=stm.executeQuery(sql);
+
+            while (rs.next()){
+                float prix = Float.parseFloat(rs.getString("prix"));
+                Produit p = new Produit(rs.getInt("id"),rs.getString("nom"),
+                        prix,rs.getInt("quantite_commande"),rs.getDate("date_commande"));
+
+                listData.add(p);
+            }
+
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+
+        return  listData;
+    }
+
+
+    private ObservableList<Produit> menuOrderListData ;
+    public void menuShowOrderData(){
+        menuOrderListData =menuGetOrder();
+        menuColProduitName.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        menuColProduitQuantite.setCellValueFactory(new PropertyValueFactory<>("quantite_commande"));
+        menuColProduitPrix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+
+        menuTableView.setItems(menuOrderListData );
+
+
+
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         menuDisplayCard();
+        menuGetOrder();
+        menuShowOrderData();
     }
 }

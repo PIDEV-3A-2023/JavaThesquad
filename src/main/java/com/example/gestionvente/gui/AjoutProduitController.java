@@ -74,7 +74,7 @@ public class AjoutProduitController implements Initializable {
         selectedImageFile = openFile.showOpenDialog(pane.getScene().getWindow());
 
         if (selectedImageFile != null) {
-            image.setImage(new Image(selectedImageFile.toURI().toString(), 134, 133, false, true));
+            image .setImage(new Image(selectedImageFile.toURI().toString(), 134, 133, false, true));
 
 //            path = file.getAbsolutePath();
 //            imagev = new Image(file.toURI().toString(), 134, 133, false, true);

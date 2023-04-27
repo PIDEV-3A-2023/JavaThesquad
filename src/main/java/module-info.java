@@ -5,7 +5,7 @@ module com.example.gestionvente {
     exports com.example.gestionvente.healtConnect;
 
 
-
+    opens com.example.gestionvente.entites to javafx.base;
     opens com.example.gestionvente to javafx.fxml;
     exports com.example.gestionvente;
     exports com.example.gestionvente.gui;

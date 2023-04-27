@@ -124,7 +124,7 @@
         <columns>
           <TableColumn fx:id="menuColProduitName" prefWidth="149.60009765625" text="Produit" />
           <TableColumn fx:id="menuColProduitQuantite" prefWidth="178.39990234375" text="Quantite" />
-            <TableColumn prefWidth="132.800048828125" text="Prix" />
+            <TableColumn fx:id="menuColProduitPrix" prefWidth="132.800048828125" text="Prix" />
         </columns>
       </TableView>
     </children>

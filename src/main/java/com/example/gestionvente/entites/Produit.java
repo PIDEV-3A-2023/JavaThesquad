@@ -1,10 +1,15 @@
 package com.example.gestionvente.entites;
 
+import java.util.Date;
+
 public class Produit {
     private int id ;
     private String nom,description,image;
     private float prix;
     private CategorieProduit category;
+    private int quantite_commande ;
+    private Date date;
+
 
 
     public Produit() {
@@ -25,6 +30,14 @@ public class Produit {
         this.image = image;
         this.prix = prix;
         this.category = category;
+    }
+
+    public Produit(int id, String nom, float prix, int quantite_commande, Date date) {
+        this.id = id;
+        this.nom = nom;
+        this.prix = prix;
+        this.quantite_commande = quantite_commande;
+        this.date = date;
     }
 
     public int getId() {
@@ -69,6 +82,22 @@ public class Produit {
 
     public CategorieProduit getCategory() {
         return category;
+    }
+
+    public int getQuantite_commande() {
+        return quantite_commande;
+    }
+
+    public void setQuantite_commande(int quantite_commande) {
+        this.quantite_commande = quantite_commande;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public void setCategory(CategorieProduit category) {

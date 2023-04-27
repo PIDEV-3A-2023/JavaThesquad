@@ -55,6 +55,7 @@ public class AfficheListeProduitController implements Initializable {
         try {
 
 
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficherDetailleProduit.fxml"));
             newLoadedPane = loader.load();
             AfficherDetailleProduitController c = loader.getController();
