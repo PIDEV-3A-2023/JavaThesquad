@@ -5,35 +5,40 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCategorieLocationFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCategorieLocationFXMLController">
     <stylesheets>
         <URL value="@ajoutercategorielocationfxml.css" />
     </stylesheets>
    <children>
       <AnchorPane fx:id="anchor" layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;">
          <children>
-            <TextArea fx:id="textareaDesc" layoutX="196.0" layoutY="200.0" prefHeight="89.0" prefWidth="209.0" />
-            <Button fx:id="revenir" layoutX="274.0" layoutY="315.0" mnemonicParsing="false" onAction="#redirigerliste" text="revenir" />
+            <TextArea fx:id="textareaDesc" layoutX="166.0" layoutY="218.0" onKeyReleased="#verifierdesc" prefHeight="89.0" prefWidth="209.0" />
+            <Button fx:id="revenir" layoutX="274.0" layoutY="348.0" mnemonicParsing="false" onAction="#redirigerliste" text="revenir" />
+            <Label fx:id="labelcheckn" layoutX="137.0" layoutY="144.0" prefHeight="18.0" prefWidth="139.0" />
+            <ImageView fx:id="checkdesc" fitHeight="35.0" fitWidth="32.0" layoutX="384.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="desclabel" layoutX="171.0" layoutY="308.0" prefHeight="18.0" prefWidth="198.0" />
+            <Button fx:id="btn" layoutX="206.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajoutCategorielocation" text="Ajouter" />
+            <ImageView fx:id="checknom" fitHeight="35.0" fitWidth="32.0" layoutX="341.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="txtfieldNom" layoutX="135.0" layoutY="113.0" onKeyReleased="#verifiernom" prefHeight="26.0" prefWidth="198.0" />
+            <Label fx:id="titrecatajout" layoutX="39.0" layoutY="27.0" text="Ajouter catégorie">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelnom" layoutX="18.0" layoutY="108.0" text="Nom :">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="labeldescription" layoutX="18.0" layoutY="209.0" text="Description : ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
-      <Label fx:id="labelnom" layoutX="51.0" layoutY="129.0" text="Nom :">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtfieldNom" layoutX="197.0" layoutY="134.0" />
-      <Label fx:id="labeldescription" layoutX="47.0" layoutY="206.0" text="Description : ">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button fx:id="btn" layoutX="197.0" layoutY="314.0" mnemonicParsing="false" onAction="#ajoutCategorielocation" text="Ajouter" />
-      <Label fx:id="titrecatajout" layoutX="51.0" layoutY="50.0" text="Ajouter catégorie">
-         <font>
-            <Font size="29.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

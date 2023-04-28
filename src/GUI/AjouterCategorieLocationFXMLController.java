@@ -22,9 +22,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
 
 /**
  * FXML Controller class
@@ -54,10 +60,76 @@ public class AjouterCategorieLocationFXMLController implements Initializable {
     private Label titrecatajout;
     @FXML
     private Button revenir;
+    
+      @FXML
+    private ImageView checkdesc;
+
+    @FXML
+    private ImageView checknom;
+
+    @FXML
+    private Label desclabel;
+
+    @FXML
+    private Label labelcheckn;
 
     /**
      * Initializes the controller class.
      */
+    
+    
+        
+    @FXML
+    private void verifiernom(KeyEvent event) {
+        int nbNonChar = 0;
+            String nom = txtfieldNom.getText().trim(); // Enlever les espaces en début et en fin
+            for (int i = 0; i < nom.length(); i++) {
+                char ch = nom.charAt(i);
+                if (!Character.isLetter(ch) && !Character.isWhitespace(ch)) { // Vérifier les espaces aussi
+                    nbNonChar++;
+                }
+            }
+        if (nbNonChar == 0 && txtfieldNom.getText().trim().length() >=4) {
+            labelcheckn.setText ("nom valide ");
+            labelcheckn.setTextFill(Color.GREEN);
+            checknom.setImage(new Image("@../../Images/validercheck.png"));
+
+
+            // verificationUserNom = true;
+        } else {
+            labelcheckn.setText ("vérifiez le nom !!! ");
+            labelcheckn.setTextFill(Color.RED);
+            checknom.setImage(new Image("@../../Images/erreurcheck.png"));
+
+
+        }
+    }
+     @FXML
+    private void verifierdesc(KeyEvent event) {
+       int nbNonChar = 0;
+            String description = textareaDesc.getText().trim(); // Enlever les espaces en début et en fin
+            for (int i = 0; i < description.length(); i++) {
+                char ch = description.charAt(i);
+                if (!Character.isLetter(ch) && !Character.isWhitespace(ch)) { // Vérifier les espaces aussi
+                    nbNonChar++;
+                }
+            }
+        
+        if (nbNonChar == 0 && textareaDesc.getText().trim().length() >=7) {
+            desclabel.setText ("description valide ");
+            desclabel.setTextFill(Color.GREEN);
+            checkdesc.setImage(new Image("@../../Images/validercheck.png"));
+
+
+            // verificationUserNom = true;
+        } else {
+            desclabel.setText ("vérifiez la description !!! ");
+            desclabel.setTextFill(Color.RED);
+            checkdesc.setImage(new Image("@../../Images/erreurcheck.png"));
+
+
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -67,6 +139,8 @@ public class AjouterCategorieLocationFXMLController implements Initializable {
 private void ajoutCategorielocation(ActionEvent event) {
     String nom = txtfieldNom.getText();
     String description = textareaDesc.getText();
+
+
     
     if (nom.isEmpty() || description.isEmpty()) {
         // Afficher un message d'erreur si les champs sont vides
@@ -102,6 +176,8 @@ private void ajoutCategorielocation(ActionEvent event) {
         }
     }
 }
+
+
           
 
         

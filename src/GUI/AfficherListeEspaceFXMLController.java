@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 import java.util.logging.Level;
@@ -28,15 +29,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Pagination;
+
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -96,6 +102,19 @@ public class AfficherListeEspaceFXMLController implements Initializable {
     private Label labelrecherche;
      @FXML
     private Button tri;
+        @FXML
+    private Button triadress;
+
+    @FXML
+    private Button triprix;
+    @FXML
+            private Pagination pagination;
+    
+    
+    
+    
+    ObservableList<Espace> EspaceList;
+  
 
     /**
      * Initializes the controller class.
@@ -108,8 +127,19 @@ public class AfficherListeEspaceFXMLController implements Initializable {
         
        afficherListeES();
        tri.setOnAction(e -> trierParNom());
+       triadress.setOnAction(e-> trierParAdresse() );
+       triprix.setOnAction(e -> trierParPrix());
+       
+       
+
+       
        SearchFilter();
+     
+
+       //createPagination();
       
+
+
        
     }    
     
@@ -149,7 +179,7 @@ private void SearchFilter() {
     
       @FXML
 private void trierParNom() {
-    // Récupérer la liste des académies depuis le TableView
+    // Récupérer la liste des espaces depuis le TableView
     ObservableList<Espace> espaces = tablespace.getItems();
     
     // Trier la liste par nom
@@ -159,15 +189,53 @@ private void trierParNom() {
     tablespace.sort(); // Appliquer le tri
 }
 
+@FXML
+private void trierParAdresse() {
+    // Récupérer la liste des espaces depuis le TableView
+    ObservableList<Espace> espaces = tablespace.getItems();
+    
+    // Trier la liste par adresse
+    tablespace.getSortOrder().clear(); // Effacer tout tri précédent
+    adresse.setSortType(TableColumn.SortType.ASCENDING); // Spécifier le type de tri (ascendant)
+    tablespace.getSortOrder().add(adresse); // Ajouter la colonne de tri
+    tablespace.sort(); // Appliquer le tri
+}
+
+@FXML
+private void trierParPrix() {
+    // Récupérer la liste des espaces depuis le TableView
+    ObservableList<Espace> espaces = tablespace.getItems();
+    
+    // Trier la liste par prix
+    SortedList<Espace> espacesSorted = espaces.sorted((e1, e2) -> Double.compare(e1.getPrixlocation(), e2.getPrixlocation()));
+    
+    // Mettre à jour la table avec la nouvelle liste triée
+    tablespace.setItems(espacesSorted);
+}
+
+
+public void createPagination() {
+    tablespace.setItems(EspaceList);
+    int itemsPerPage = 2; // number of rows per page
+    pagination.setPageCount((int) Math.ceil((double) EspaceList.size() / itemsPerPage));
+    pagination.setPageFactory(new Callback<Integer, Node>() {
+        @Override
+        public Node call(Integer pageIndex) {
+            int fromIndex = pageIndex * itemsPerPage;
+            int toIndex = Math.min(fromIndex + itemsPerPage, EspaceList.size());
+            tablespace.setItems(FXCollections.observableArrayList(EspaceList.subList(fromIndex, toIndex)));
+            return tablespace;
+        }
+    });
+}
+
+
     private void afficherListeES() {
         EspaceService es = new EspaceService();
         
          try {
         // Récupérer la liste des espaces depuis le service
         ObservableList<Espace> espaces = FXCollections.observableArrayList(es.afficherListeES());
-        
-        
-        
         
 idspace.setCellValueFactory(cellData ->
                 new SimpleObjectProperty<Integer>(Integer.valueOf(cellData.getValue().getId())));
