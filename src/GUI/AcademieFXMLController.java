@@ -82,9 +82,9 @@ public class AcademieFXMLController implements Initializable {
     private TableView<Academie> table;
     @FXML
     private Button trier;
-        @FXML
+    @FXML
     private Label labelrech;
-          @FXML
+    @FXML
     private TextField recherche;
           
    @FXML

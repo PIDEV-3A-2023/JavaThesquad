@@ -99,13 +99,13 @@ public class ModifiercoursFXMLController implements Initializable {
            e.printStackTrace();
        }
     }    
-    
+ 
    public void pass(Cours cours){
     this.cours=cours;
     nomtxt.setText(cours.getNom());
     datepk.setValue(LocalDate.parse(cours.getDate().toString()));
-    duree.setText(String.valueOf(cours.getDuree())); 
-    nbpartc.setText(String.valueOf(cours.getNbparticipants())); 
+    dureetxt.setText(String.valueOf(cours.getDuree())); 
+    participtxt.setText(String.valueOf(cours.getNbparticipants())); 
     combosalle.setValue(cours.getSalle()); 
 }
    public void Modifier(ActionEvent e) throws SQLException {
@@ -123,7 +123,7 @@ Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
 Date date = Date.from(instant);
 
 
-          if (nomtxt.getText().isEmpty() || duree.getText().isEmpty() || nbpartc.getText().isEmpty() ) {
+          if (nomtxt.getText().isEmpty() || dureetxt.getText().isEmpty() || participtxt.getText().isEmpty() ) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Erreur de saisie");
         alert.setHeaderText(null);
@@ -153,7 +153,7 @@ Date date = Date.from(instant);
     cours.setNom(nomtxt.getText());
     cours.setDate(java.sql.Date.valueOf(datepk.getValue()));
     cours.setDuree(Integer.parseInt(dureetxt.getText()));
-    cours.setNbparticipants(Integer.parseInt(nbpartc.getText()));
+    cours.setNbparticipants(Integer.parseInt(participtxt.getText()));
     cours.setSalle(combosalle.getValue());
   
    CoursService cs = new CoursService();

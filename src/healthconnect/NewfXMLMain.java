@@ -26,7 +26,7 @@ public class NewfXMLMain extends Application {
         this.stage = primaryStage;
         try {
        
-            root = FXMLLoader.load(getClass().getResource("/GUI/CoursFXML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/GUI/SalleFXML.fxml"));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

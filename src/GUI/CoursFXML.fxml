@@ -25,12 +25,12 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnmodifierc" layoutX="574.0" layoutY="216.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Modifier">
+      <Button fx:id="btnmodifierc" layoutX="574.0" layoutY="216.0" mnemonicParsing="false" onAction="#redirecttomodif" prefHeight="26.0" prefWidth="94.0" text="Modifier">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnsupp" layoutX="574.0" layoutY="264.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="94.0" text="Supprimer">
+      <Button fx:id="btnsupp" layoutX="574.0" layoutY="264.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="94.0" text="Supprimer">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
@@ -45,6 +45,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="recherchetextfield" layoutX="458.0" layoutY="33.0" />
+      <TextField fx:id="recherchetextfield" layoutX="458.0" layoutY="33.0" onAction="#Rechercher" />
    </children>
 </AnchorPane>

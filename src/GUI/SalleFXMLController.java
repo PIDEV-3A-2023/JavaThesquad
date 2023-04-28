@@ -11,10 +11,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +27,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import services.SalleService;
@@ -65,12 +69,17 @@ public class SalleFXMLController implements Initializable{
 
     @FXML
     private TableView<Salle> tables;
+     @FXML
+    private Label labelrechc;
+     @FXML
+    private TextField recherchetextfield;
 
     
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
       afficherListesalles();
+      Rechercher();
     }
      @FXML
 private void afficherListesalles() {
@@ -101,6 +110,36 @@ nomac.setCellValueFactory(cellData ->
         alert.setContentText("Erreur lors de l'affichage de la liste des salles.");
         alert.show();
     }
+}
+ @FXML
+private void Rechercher() {
+    ObservableList<Salle> salles = tables.getItems();
+        FilteredList<Salle> filterData = new FilteredList(salles,s->true);
+    recherchetextfield.setOnKeyReleased(c->{
+        recherchetextfield.textProperty().addListener((observable,oldValue,newValue)->{
+            filterData.setPredicate((Predicate<? super Salle >) ss->{
+                if(newValue==null){
+                    return true;
+                }
+                
+                String toLowerCaseFilter = newValue.toLowerCase();
+                if(ss.getNom().contains(newValue)){
+                    return true;
+                    } else if (Integer.toString(ss.getCapacite()).contains(newValue)) {
+                    return true;
+                } else if(Integer.toString(ss.getEquipement()).contains(newValue)){
+                    return true;
+              
+                } else if (ss.getAcademie() != null && ss.getAcademie().getNom().contains(newValue)) {
+                    return true;
+                }
+                return false;
+            });
+        });
+        final SortedList<Salle> sss = new SortedList<>(filterData);
+        sss.comparatorProperty().bind(tables.comparatorProperty());
+        tables.setItems(sss);
+    });
 }
 
 public void supprimer(ActionEvent e){

@@ -1,22 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import java.lang.String?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" fx:id="anchorr" prefHeight="500.0" prefWidth="649.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.FrontAcFXMLController">
-   <children>
-      <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="#66aef2" height="327.0" layoutX="169.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="295.0" />
-      <Label layoutX="252.0" layoutY="96.0" text="Liste des académies">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="nom" layoutX="291.0" layoutY="151.0" text="nom" />
-      <Label fx:id="adresse" layoutX="291.0" layoutY="182.0" text="adresse" />
-      <Label fx:id="numtel" layoutX="292.0" layoutY="214.0" text="numtel" />
-      <Label fx:id="sportpropose" layoutX="288.0" layoutY="250.0" text="sportpropose" />
-   </children>
-</AnchorPane>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FrontAcFXMLController">
+    <children>
+        <Rectangle id="btn" arcHeight="5.0" arcWidth="5.0" height="607.0" layoutX="-1.0" layoutY="-2.0" stroke="#1129c4" strokeType="INSIDE" width="1501.0">
+         <fill>
+            <LinearGradient endX="0.26893940477660205" endY="1.0" startX="0.10984848484848475">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.22128655016422272" green="0.30744248628616333" blue="0.34736841917037964" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color green="0.13333334028720856" blue="1.0" opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <AnchorPane layoutX="23.0" layoutY="91.0" prefHeight="479.0" prefWidth="851.0" stylesheets="@mainFormDesign.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="radius" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <ScrollPane fx:id="menuScrollPane" layoutX="2.0" layoutY="2.0" prefHeight="473.0" prefWidth="905.0" />
+            <GridPane fx:id="menuGridPane" prefHeight="18.0" prefWidth="103.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="977.0" layoutY="96.0" prefHeight="474.0" prefWidth="500.0" stylesheets="@mainFormDesign.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="radius" />
+            <String fx:value="shadow" />
+         </styleClass>
+      </AnchorPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutY="28.0" stroke="#3d291d" strokeType="INSIDE" width="1501.0">
+            <fill>
+                <RadialGradient centerX="0.7411894609224428" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.22128655016422272" green="0.30744248628616333" blue="0.34736841917037964" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.5293020009994507" green="0.6000000238418579" blue="0.5099999904632568" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </RadialGradient>
+            </fill></Rectangle>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="108.0" layoutX="1056.0" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+        <Text fill="#2f3459" layoutX="36.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des académies.">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Text>
+        <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="1067.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/HealthConnect.png" />
+            </image>
+        </ImageView>
+    </children>
+</Pane>
