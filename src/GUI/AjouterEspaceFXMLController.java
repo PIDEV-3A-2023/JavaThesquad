@@ -113,6 +113,11 @@ public class AjouterEspaceFXMLController implements Initializable {
     private TextArea textareacarac;
      @FXML
     private TextField dispo;
+       @FXML
+    private ImageView imagedatecheck;
+       
+       @FXML
+    private Label checkdatetxt;
      
     
 
@@ -175,6 +180,15 @@ private void ajoutEspace(ActionEvent event) {
         alert.showAndWait();
         return;
     }
+if (textfieldprix.getText().isEmpty() || Double.parseDouble(textfieldprix.getText()) <= 0) {
+    Alert alert = new Alert(Alert.AlertType.WARNING);
+    alert.setTitle("Champ de prix invalide");
+    alert.setHeaderText(null);
+    alert.setContentText("Le prix doit être supérieur à 0.");
+    alert.showAndWait();
+    return;
+}
+
 
     // Vérifier que l'image est au format jpg ou png
    if (selectedImageFile == null) {
@@ -252,6 +266,7 @@ notificationBuilder.showInformation(); */
         Logger.getLogger(AjouterEspaceFXMLController.class.getName()).log(Level.SEVERE, null, ex);
     }
 }
+
 
  @FXML
 private void chooseImageButton(ActionEvent event) {
