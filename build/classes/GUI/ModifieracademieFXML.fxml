@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="anchor2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="725.0" style="-fx-background-color: #77b5fE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchor2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="725.0" style="-fx-background-color: #77b5fE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifieracademieFXMLController">
    <children>
-      <Button fx:id="modbtn" layoutX="349.0" layoutY="353.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Modifier" />
+      <Button fx:id="modbtn" layoutX="349.0" layoutY="353.0" mnemonicParsing="false" onAction="#Modifier" prefHeight="26.0" prefWidth="82.0" text="Modifier" />
       <Label fx:id="nom" layoutX="108.0" layoutY="80.0" text="Nom :">
          <font>
             <Font size="24.0" />
@@ -34,10 +33,11 @@
       <TextField fx:id="adtext" layoutX="305.0" layoutY="134.0" />
       <TextField fx:id="numteltext" layoutX="305.0" layoutY="177.0" />
       <TextField fx:id="sptx" layoutX="305.0" layoutY="221.0" />
-      <Label layoutX="240.0" layoutY="24.0" text="Modifier une académie">
+      <Label fx:id="modiif" layoutX="240.0" layoutY="24.0" text="Modifier une académie">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <Button fx:id="retour" layoutX="250.0" layoutY="354.0" mnemonicParsing="false" onAction="#redirecttoacademie" prefHeight="26.0" prefWidth="82.0" text="Retour" />
    </children>
 </AnchorPane>

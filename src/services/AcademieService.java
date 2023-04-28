@@ -80,8 +80,6 @@ public void ajoutAcademiee(Academie aa) throws SQLException {
       return academies;
     }
     
-    
-
     @Override
     public Academie getAcademiee(int id)throws SQLException {
            Academie Academie=null;
@@ -104,7 +102,8 @@ public void ajoutAcademiee(Academie aa) throws SQLException {
 
         return Academie;
     }
-
+ 
+    
  @Override
 public boolean modifieracademie(Academie object) throws SQLException {
     String req = "UPDATE `Academie` SET nom=?, adresse=?, numtel=?, sportpropose=? WHERE id=?";
@@ -156,6 +155,8 @@ public boolean modifieracademie(Academie object) throws SQLException {
 
         return true;
     }
+
+    
 
 
     

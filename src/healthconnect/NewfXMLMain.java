@@ -26,13 +26,13 @@ public class NewfXMLMain extends Application {
         this.stage = primaryStage;
         try {
        
-            root = FXMLLoader.load(getClass().getResource("/GUI/AcademieFXML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/GUI/CoursFXML.fxml"));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Academie");
+        stage.setTitle("Salle");
         stage.show();
     }
 

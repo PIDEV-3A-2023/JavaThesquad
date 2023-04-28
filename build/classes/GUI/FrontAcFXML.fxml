@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" fx:id="anchorr" prefHeight="500.0" prefWidth="649.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.FrontAcFXMLController">
+   <children>
+      <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="#66aef2" height="327.0" layoutX="169.0" layoutY="75.0" stroke="BLACK" strokeType="INSIDE" width="295.0" />
+      <Label layoutX="252.0" layoutY="96.0" text="Liste des académies">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nom" layoutX="291.0" layoutY="151.0" text="nom" />
+      <Label fx:id="adresse" layoutX="291.0" layoutY="182.0" text="adresse" />
+      <Label fx:id="numtel" layoutX="292.0" layoutY="214.0" text="numtel" />
+      <Label fx:id="sportpropose" layoutX="288.0" layoutY="250.0" text="sportpropose" />
+   </children>
+</AnchorPane>

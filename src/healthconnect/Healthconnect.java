@@ -35,7 +35,7 @@ public class Healthconnect {
         System.out.println(ex.getMessage());
                 }*/
        
-        //Ajouter une academie 2eme méthode
+        //Ajouter une academie avec preparestatement
         /*System.out.println(db);
         Academie aa=new Academie("handacademy","tunis","25797521","hockey");
         AcademieService a2=new AcademieService();
@@ -45,7 +45,7 @@ public class Healthconnect {
         }*/
         
         //Afficher liste des academies
-      /* AcademieService ac3=new AcademieService();
+      /*AcademieService ac3=new AcademieService();
        try {
        System.out.println(ac3.afficherListeA());
        }catch(SQLException ex){
@@ -53,9 +53,9 @@ public class Healthconnect {
        }*/
        
           //get une academie
-       /*AcademieService ac4=new AcademieService();
+      /* AcademieService ac4=new AcademieService();
        try {
-       System.out.println(ac4.getAcademiee(4));
+       System.out.println(ac4.getAcademiee(10));
        }catch(SQLException ex){
            System.out.println(ex.getMessage());
        }*/
@@ -64,41 +64,41 @@ public class Healthconnect {
        /*AcademieService ac5=new AcademieService();
        Academie ac=new Academie();
           ac.setId(10);
-          ac.setNom("footp");
+          ac.setNom("foot");
           ac.setAdresse("rades");
           ac.setNumtel("71599506");
           ac.setSportpropose("sportt");
           
           ac5.modifieracademie(ac);*/
-       
+      
        //supprimer une academie
-       /* AcademieService ac6=new AcademieService();
+        /*AcademieService ac6=new AcademieService();
        
-       System.out.println(ac6.supprimeracademie(1));*/
+       System.out.println(ac6.supprimeracademie(48));*/
        
          //Ajouter une salle
-      AcademieService ac1=new AcademieService();
+     /* AcademieService ac1=new AcademieService();
        
        Academie a22 = ac1.getAcademiee(10);
          
-       Salle salle1 = new Salle("footy",0,0,a22);
+       Salle salle1 = new Salle("footy",10,10,a22);
        SalleService salleserv = new SalleService();
        try {
            salleserv.ajoutSalle(salle1);
        }catch(SQLException ex){
            System.out.println(ex.getMessage());
-       }
+       }*/
     
-   //Modifier une salle
-     /*SalleService sserv=new SalleService();
+   /*Modifier une salle
+     SalleService sserv=new SalleService();
      AcademieService as=new AcademieService(); 
              
        Salle coo=new Salle();
           coo.setId(3);
           coo.setNom("coo");
-          coo.setCapacite(10);
-          coo.setEquipement(8);
-          coo.setAcademie(new Academie(35,"hh","hh","hh","hh"));
+          coo.setCapacite(8);
+          coo.setEquipement(1);
+          coo.setAcademie(new Academie(30,"handclub","menzah","88888888","hand"));
           sserv.modifiersalle(coo);*/
         
      
@@ -138,12 +138,12 @@ public class Healthconnect {
        }*/
        
   //Afficher la liste des cours
-     /*CoursService cc=new CoursService();
+     CoursService cc=new CoursService();
        try {
        System.out.println(cc.afficherListecours());
        }catch(SQLException ex){
            System.out.println(ex.getMessage());
-       }*/
+       }
      
       //Récupérer cours
      /* CoursService ccv=new CoursService();

@@ -6,12 +6,16 @@
 package GUI;
 
 import entities.Academie;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import services.AcademieService;
 
@@ -19,6 +23,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 
 /**
@@ -28,7 +35,7 @@ import javafx.scene.layout.AnchorPane;
  */
 public class AjoutacademieFXMLController implements Initializable {
     
-     @FXML
+       @FXML
     private Label aclabel;
 
     @FXML
@@ -54,7 +61,10 @@ public class AjoutacademieFXMLController implements Initializable {
 
     @FXML
     private TextField numtelTF;
- 
+
+    @FXML
+    private Button revenir;
+
     @FXML
     private Label sp;
 
@@ -74,10 +84,10 @@ private void ajouterAcademie(ActionEvent event) {
     String nom = nomTF.getText();
     String adresse = adTF.getText();
     String numtel = numtelTF.getText();
-    String specialite = spTF.getText();
+    String sportpropose = spTF.getText();
 
     // Vérifier que les champs ne sont pas vides
-    if (nom.isEmpty() || adresse.isEmpty() || numtel.isEmpty() || specialite.isEmpty()) {
+    if (nom.isEmpty() || adresse.isEmpty() || numtel.isEmpty() || sportpropose.isEmpty()) {
         // Afficher une alerte si l'un des champs est vide
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Erreur");
@@ -99,15 +109,25 @@ private void ajouterAcademie(ActionEvent event) {
     }
 
     // Si tout est valide, ajouter l'académie
-    Academie aa = new Academie(nom, adresse, numtel, specialite);
+    Academie aa = new Academie(nom, adresse, numtel, sportpropose);
     AcademieService as = new AcademieService();
+     Notifications notificationBuilder = Notifications.create()
+    .title("Académie ajouté avec succés ")
+    .text("les ajouts sont enregistrés ")
+    .hideAfter(Duration.seconds(5))
+    .position(Pos.CENTER)
+    .graphic(null)
+    .darkStyle()
+    .onAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            // code à exécuter lorsqu'on clique sur la notification
+        }
+    });
+notificationBuilder.showInformation(); 
     try {
         as.ajoutAcademiee(aa);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Succes");
-        alert.setHeaderText(null);
-        alert.setContentText("Academie ajoutée avec succes");
-        alert.show();
+        
 
         nomTF.setText("");
         adTF.setText("");
@@ -118,5 +138,26 @@ private void ajouterAcademie(ActionEvent event) {
         System.out.println(ex.getMessage());
     }
 }
+
+public void redirect(ActionEvent e){
+        Pane newLoadedPane = null;
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/AcademieFXML.fxml"));
+         
+            
+            newLoadedPane = loader.load();
+            AcademieFXMLController s = loader.getController();
+          
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+        anch.getChildren().clear();
+        anch.getChildren().add(newLoadedPane);
+       
+
+    }
     
 }

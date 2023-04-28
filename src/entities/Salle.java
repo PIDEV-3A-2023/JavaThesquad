@@ -33,6 +33,8 @@ public class Salle {
         this.academie = academie;
     }
 
+  
+
     public int getId() {
         return id;
     }

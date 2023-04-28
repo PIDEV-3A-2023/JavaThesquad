@@ -83,7 +83,7 @@ public class Academie {
 
     @Override
     public String toString() {
-        return "Academie{" + "id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", numtel=" + numtel + ", sportpropose=" + sportpropose + '}';
+        return "Academie{" + ", nom=" + nom  + '}';
     }
 
  

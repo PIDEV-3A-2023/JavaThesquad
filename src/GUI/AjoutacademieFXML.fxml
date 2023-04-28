@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="anch" prefHeight="508.0" prefWidth="798.0" style="-fx-background-color: #77b5fE;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="GUI.AjoutacademieFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anch" prefHeight="508.0" prefWidth="798.0" style="-fx-background-color: #77b5fE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutacademieFXMLController">
    <children>
       <Label fx:id="no" layoutX="232.0" layoutY="114.0" text="Nom :">
          <font>
@@ -33,15 +32,20 @@
       <TextField fx:id="adTF" layoutX="357.0" layoutY="183.0" />
       <TextField fx:id="numtelTF" layoutX="358.0" layoutY="245.0" />
       <TextField fx:id="spTF" layoutX="431.0" layoutY="302.0" />
-      <Button fx:id="btn" layoutX="531.0" layoutY="385.0" mnemonicParsing="false" onAction="#ajouterAcademie" text="Ajouter">
+      <Button fx:id="btn" layoutX="631.0" layoutY="385.0" mnemonicParsing="false" onAction="#ajouterAcademie" text="Ajouter">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
       <Label fx:id="aclabel" layoutX="261.0" layoutY="41.0" prefHeight="36.0" prefWidth="275.0" text="Ajouter une académie">
          <font>
-            <Font size="24.0" />
+            <Font name="Book Antiqua" size="26.0" />
          </font>
       </Label>
+      <Button fx:id="revenir" layoutX="496.0" layoutY="385.0" mnemonicParsing="false" onAction="#redirect" prefHeight="36.0" prefWidth="98.0" text="Retour">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
