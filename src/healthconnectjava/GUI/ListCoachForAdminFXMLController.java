@@ -138,23 +138,22 @@ public class ListCoachForAdminFXMLController implements Initializable {
         listCoach.setItems(CoachList);
         
         Callback<TableColumn<Coach, String>, TableCell<Coach, String>> cellFoctory = (TableColumn<Coach, String> param) -> {
+        final TableCell<Coach, String> cell = new TableCell<Coach, String>() {
+            @Override
+            public void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
 
-            final TableCell<Coach, String> cell = new TableCell<Coach, String>() {
-                @Override
-                public void updateItem(String item, boolean empty) {
-                    super.updateItem(item, empty);
-                    
-                    if (empty) {
-                        setGraphic(null);
-                        setText(null);
+                if (empty) {
+                    setGraphic(null);
+                    setText(null);
+                } else {
+                    Button activerCoach = new Button("Activer");
+                    Button desactiverCoach = new Button("Désactiver");
+                    Button confirmerCoach = new Button("Confirmer");
 
-                    } else {
+                    // Définir les styles des boutons
 
-                        Button activerCoach = new Button("Activer");
-                        Button desactiverCoach = new Button("Désactiver");
-                        Button ConfirmerCoach = new Button("Confirmer");
-
-                        activerCoach.setStyle(
+                    activerCoach.setStyle(
                             "-fx-background-color: #2196f3;"+
                             "-fx-font-family: Tahoma;"+
                             "-fx-font-size: 12px;"+
@@ -168,71 +167,77 @@ public class ListCoachForAdminFXMLController implements Initializable {
                             "-fx-text-fill: #FFF;"+
                             "-fx-background-radius: 20px;"
                         );
-                        ConfirmerCoach.setStyle(
+                        confirmerCoach.setStyle(
                             "-fx-background-color: #2196f3;"+
                             "-fx-font-family: Tahoma;"+
                             "-fx-font-size: 12px;"+
                             "-fx-text-fill: #FFF;"+
                             "-fx-background-radius: 20px;"
                         );
-                        
-                        activerCoach.setOnAction((ActionEvent event) -> {
-                            try {
-                                coach = listCoach.getSelectionModel().getSelectedItem();
-                                String req = "UPDATE user JOIN coach ON user.id = coach.id SET user.is_verified = true WHERE user.id = "+coach.getId();
-                                PreparedStatement pst = conx.prepareStatement(req);
-                                System.out.println("Coach activé");
-                                pst.executeUpdate();
-                                loadDate();
-                            } catch (SQLException ex) {
-                                System.err.println(ex.getMessage());
-                            }
-                            
-                        });
-                        
-                        desactiverCoach.setOnAction((ActionEvent event) -> {
-                            try {
-                                coach = listCoach.getSelectionModel().getSelectedItem();
-                                String req = "UPDATE user JOIN coach ON user.id = coach.id SET user.is_verified = false WHERE user.id = "+coach.getId();
-                                PreparedStatement pst = conx.prepareStatement(req);
-                                System.out.println("Coach desactivé");
-                                pst.executeUpdate();
-                                loadDate();
-                            } catch (SQLException ex) {
-                                System.err.println(ex.getMessage());
-                            }
-                        });
-                        
-                        ConfirmerCoach.setOnAction((ActionEvent event) -> {
-                            try {
-                                coach = listCoach.getSelectionModel().getSelectedItem();
-                                String req = "UPDATE user JOIN coach ON user.id = coach.id SET coach.etat_compte = true WHERE user.id = "+coach.getId();
-                                PreparedStatement pst = conx.prepareStatement(req);
-                                System.out.println("Coach confirmé");
-                                pst.executeUpdate();
-                                loadDate();
-                                CoEmail = coach.getEmail();
-                                SendEmailMailtrap.getSendEmail();
-                            } catch (SQLException ex) {
-                                System.err.println(ex.getMessage());
-                            } catch (UnknownHostException ex) {
-                                System.err.println(ex.getMessage());
-                            }
-                        });
-                       
 
-                        HBox managebtn = new HBox(activerCoach, desactiverCoach, ConfirmerCoach);
-                        managebtn.setStyle("-fx-alignment:center");
 
-                        setGraphic(managebtn);
+                        Coach coach = getTableView().getItems().get(getIndex());
+                        boolean isVerified = coach.isIsVerified();
+                        boolean etatCompte = coach.isEtatCompte();
+                        
+                        // Afficher les boutons appropriés en fonction de la valeur de la colonne "is_verified"
+                        if (isVerified == true && etatCompte == false) {
+                            setGraphic(new HBox(desactiverCoach, confirmerCoach));
+                        } else if (isVerified == true && etatCompte == true){
+                            setGraphic(new HBox(desactiverCoach));
+                        }else {
+                            setGraphic(activerCoach);
+                        }
                         setText(null);
-                    }
+
+                    // Définir les actions des boutons
+                    activerCoach.setOnAction((ActionEvent event) -> {
+                        try {
+                            String req = "UPDATE user JOIN coach ON user.id = coach.id SET user.is_verified = true WHERE user.id = ?";
+                            PreparedStatement pst = conx.prepareStatement(req);
+                            pst.setInt(1, coach.getId());
+                            System.out.println("Coach activé");
+                            pst.executeUpdate();
+                            loadDate();
+                        } catch (SQLException ex) {
+                            System.err.println(ex.getMessage());
+                        }
+                    });
+
+                    desactiverCoach.setOnAction((ActionEvent event) -> {
+                        try {
+                            String req = "UPDATE user JOIN coach ON user.id = coach.id SET user.is_verified = false WHERE user.id = ?";
+                            PreparedStatement pst = conx.prepareStatement(req);
+                            pst.setInt(1, coach.getId());
+                            System.out.println("Coach désactivé");
+                            pst.executeUpdate();
+                            loadDate();
+                        } catch (SQLException ex) {
+                            System.err.println(ex.getMessage());
+                        }
+                    });
+
+                    confirmerCoach.setOnAction((ActionEvent event) -> {
+                        try {
+                            String req = "UPDATE user JOIN coach ON user.id = coach.id SET coach.etat_compte = true WHERE user.id = ?";
+                            PreparedStatement pst = conx.prepareStatement(req);
+                            pst.setInt(1, coach.getId());
+                            System.out.println("Coach confirmé");
+                            pst.executeUpdate();
+                            loadDate();
+                            CoEmail = coach.getEmail();
+                            SendEmailMailtrap.getSendEmail();
+                        } catch (SQLException ex) {
+                            System.err.println(ex.getMessage());
+                        } catch (UnknownHostException ex) {
+                            System.err.println(ex.getMessage());
+                        }
+                    });
                 }
-
-            };
-
-            return cell;
+            }
         };
+        return cell;
+    };
         Action.setCellFactory(cellFoctory);
         listCoach.setItems(CoachList);
     }
@@ -290,6 +295,15 @@ public class ListCoachForAdminFXMLController implements Initializable {
                 String searchKey = newValue.toLowerCase();
 
                 if (predicateCoachData.getNom().toLowerCase().startsWith(searchKey)) {
+                    return true;
+                } 
+                else if (predicateCoachData.getPrenom().toLowerCase().startsWith(searchKey)) {
+                    return true;
+                }
+                else if (predicateCoachData.getTelephone().toLowerCase().startsWith(searchKey)) {
+                    return true;
+                }
+                else if (predicateCoachData.getEmail().toLowerCase().startsWith(searchKey)) {
                     return true;
                 } 
                 else {

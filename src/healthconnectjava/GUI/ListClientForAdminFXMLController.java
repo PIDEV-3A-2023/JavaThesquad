@@ -161,11 +161,22 @@ public class ListClientForAdminFXMLController implements Initializable {
                             "-fx-background-radius: 20px;"
                         );
                         
+                        Client client = getTableView().getItems().get(getIndex());
+                        boolean isVerified = client.isIsVerified();
+                        
+                        // Afficher les boutons appropriés en fonction de la valeur de la colonne "is_verified"
+                        if (isVerified) {
+                            setGraphic(new HBox(desactiverClient));
+                        } else {
+                            setGraphic(activerClient);
+                        }
+                        setText(null);
+                        
                         activerClient.setOnAction((ActionEvent event) -> {
                             try {
-                                client = listClient.getSelectionModel().getSelectedItem();
-                                String req = "UPDATE user JOIN client ON user.id = client.id SET user.is_verified = true WHERE user.id = "+client.getId();
+                                String req = "UPDATE user JOIN client ON user.id = client.id SET user.is_verified = true WHERE user.id = ?";
                                 PreparedStatement pst = conx.prepareStatement(req);
+                                pst.setInt(1, client.getId());
                                 System.out.println("Client activé");
                                 pst.executeUpdate();
                                 loadDate();
@@ -177,9 +188,9 @@ public class ListClientForAdminFXMLController implements Initializable {
                         
                         desactiverClient.setOnAction((ActionEvent event) -> {
                             try {
-                                client = listClient.getSelectionModel().getSelectedItem();
-                                String req = "UPDATE user JOIN client ON user.id = client.id SET user.is_verified = false WHERE user.id = "+client.getId();
+                                String req = "UPDATE user JOIN client ON user.id = client.id SET user.is_verified = false WHERE user.id = ?";
                                 PreparedStatement pst = conx.prepareStatement(req);
+                                pst.setInt(1, client.getId());
                                 System.out.println("Client desactivé");
                                 pst.executeUpdate();
                                 loadDate();
@@ -188,12 +199,6 @@ public class ListClientForAdminFXMLController implements Initializable {
                             }
                         });
                        
-
-                        HBox managebtn = new HBox(activerClient, desactiverClient);
-                        managebtn.setStyle("-fx-alignment:center");
-
-                        setGraphic(managebtn);
-                        setText(null);
                     }
                 }
 
