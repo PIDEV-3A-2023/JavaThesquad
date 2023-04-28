@@ -59,10 +59,9 @@
             <String fx:value="shadow" />
          </styleClass>
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="282.0" layoutX="97.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="326.0" />
-              <ImageView fitHeight="282.0" fitWidth="312.0" layoutX="111.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+              <ImageView fitHeight="452.0" fitWidth="500.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                      <Image url="@../../../../../../Downloads/logoo.png" />
+                      <Image url="@../Images/logo.jpg" />
                   </image>
               </ImageView>
          </children>

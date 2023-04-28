@@ -7,17 +7,19 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchores" prefHeight="539.0" prefWidth="746.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherListeEspaceFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchores" prefHeight="680.0" prefWidth="930.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AfficherListeEspaceFXMLController">
     <stylesheets>
         <URL value="@afficherlisteespacefxml.css" />
     </stylesheets>
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#84c2df" height="54.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="746.0" />
-      <TableView fx:id="tablespace" layoutX="17.0" layoutY="129.0" prefHeight="203.0" prefWidth="702.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b8ccdf" height="686.0" layoutX="769.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" width="160.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#84c2df" height="54.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="770.0" />
+      <TableView fx:id="tablespace" layoutX="17.0" layoutY="150.0" prefHeight="186.0" prefWidth="736.0">
         <columns>
           <TableColumn fx:id="idspace" prefWidth="49.0" text="id" />
           <TableColumn fx:id="nomesp" prefWidth="68.0" text="nom" />
@@ -35,19 +37,21 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="ajouteres" layoutX="212.0" layoutY="436.0" mnemonicParsing="false" onAction="#redirect" text="ajouter" />
-      <Button fx:id="modifieres" layoutX="308.0" layoutY="436.0" mnemonicParsing="false" onAction="#redirigermod" text="modifier" />
-      <Button fx:id="suppespace" layoutX="416.0" layoutY="436.0" mnemonicParsing="false" onAction="#supprimerespace" text="supprimer" />
-      <TextField fx:id="txtfieldrecherche" layoutX="510.0" layoutY="85.0" prefHeight="25.0" prefWidth="193.0" />
+      <Button fx:id="ajouteres" layoutX="833.0" layoutY="124.0" mnemonicParsing="false" onAction="#redirect" text="ajouter" />
+      <Button fx:id="modifieres" layoutX="829.0" layoutY="195.0" mnemonicParsing="false" onAction="#redirigermod" text="modifier" />
+      <Button fx:id="suppespace" layoutX="824.0" layoutY="263.0" mnemonicParsing="false" onAction="#supprimerespace" text="supprimer" />
+      <TextField fx:id="txtfieldrecherche" layoutX="510.0" layoutY="85.0" prefHeight="26.0" prefWidth="226.0" />
       <Label fx:id="labelrecherche" layoutX="412.0" layoutY="84.0" text="recherche">
         
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-        <Button fx:id="tri" layoutX="29.0" layoutY="85.0" mnemonicParsing="false" text="Trier par nom" />
+        <Button fx:id="tri" layoutX="17.0" layoutY="85.0" mnemonicParsing="false" text="Trier par nom" />
       <Button fx:id="triadress" layoutX="135.0" layoutY="85.0" mnemonicParsing="false" text="Trier par adresse" />
-      <Button fx:id="triprix" layoutX="251.0" layoutY="85.0" mnemonicParsing="false" text="Trier par prix" />
-      <Pagination fx:id="pagination" layoutX="268.0" layoutY="347.0" prefHeight="62.0" prefWidth="200.0" />
+      <Pagination fx:id="pagination" layoutX="17.0" layoutY="342.0" prefHeight="46.0" prefWidth="736.0" />
+      <Button fx:id="triprix" layoutX="266.0" layoutY="85.0" mnemonicParsing="false" text="Trier par prix" />
+      <Button layoutX="614.0" layoutY="399.0" mnemonicParsing="false" onAction="#QrCodeEspace" text="QR Code" />
+      <ImageView fx:id="code_qr" fitHeight="168.0" fitWidth="175.0" layoutX="560.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

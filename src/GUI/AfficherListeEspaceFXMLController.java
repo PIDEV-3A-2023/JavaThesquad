@@ -9,6 +9,13 @@ import Entities.CategorieLocation;
 import Entities.Espace;
 import Services.CategorieLocationService;
 import Services.EspaceService;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -25,6 +32,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +46,7 @@ import javafx.scene.control.Pagination;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -109,6 +118,9 @@ public class AfficherListeEspaceFXMLController implements Initializable {
     private Button triprix;
     @FXML
             private Pagination pagination;
+    
+    @FXML
+    private ImageView code_qr;
     
     
     
@@ -338,7 +350,42 @@ nomesp.setCellValueFactory(cellData ->
         afficherListeES();
     }
         
+        @FXML
+    private void QrCodeEspace(ActionEvent event) 
+    {
+        Espace esp = tablespace.getSelectionModel().getSelectedItem();
+      
+
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        String Information = "Nom : "+esp.getNom()+"\n"+"caracteristique : "+esp.getCaracteristique()+"adresse : "+esp.getAdresse()+"date  : "+esp.getTarifhoraire()+"prix : "+esp.getDispo()+"image :"+esp.getImage()+"categorie : "+esp.getCategorieloc();
+        int width = 300;
+        int height = 300;
+        BufferedImage bufferedImage = null;
+         try{
+            BitMatrix byteMatrix = qrCodeWriter.encode(Information, BarcodeFormat.QR_CODE, width, height);
+            bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            bufferedImage.createGraphics();
+            
+            Graphics2D graphics = (Graphics2D) bufferedImage.getGraphics();
+            graphics.setColor(Color.WHITE);
+            graphics.fillRect(0, 0, width, height);
+            graphics.setColor(Color.BLACK);
+            
+            for (int i = 0; i < height; i++) {
+                for (int j = 0; j < width; j++) {
+                    if (byteMatrix.get(i, j)) {
+                        graphics.fillRect(i, j, 1, 1);
+                    }
+                }
+            }
+            
+            System.out.println("Success...");
+            
+            code_qr.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
+            
+        } catch (WriterException ex) {
+        }
         
-     
+    }
     
 }
