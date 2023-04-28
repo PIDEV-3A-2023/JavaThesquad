@@ -49,6 +49,16 @@ public class Espace {
         
     }
 
+    public Espace(int id, String nom, String caracteristique, String image, Double prixlocation) {
+        this.id = id;
+        this.nom = nom;
+        this.caracteristique = caracteristique;
+        this.image = image;
+        this.prixlocation = prixlocation;
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -124,7 +134,7 @@ public class Espace {
 
     @Override
     public String toString() {
-        return "Espace{" + "id=" + id + ", nom=" + nom + ", caracteristique=" + caracteristique + ", image=" + image + ", adresse=" + adresse + ", dispo=" + dispo + ", tarifhoraire=" + tarifhoraire + ", prixlocation=" + prixlocation  + ", categorieloc=" + categorieloc.getNom() +'}';
+        return "Espace{" + "id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", image=" + image +  ", prixlocation=" + prixlocation  +'}';
     }
     
     

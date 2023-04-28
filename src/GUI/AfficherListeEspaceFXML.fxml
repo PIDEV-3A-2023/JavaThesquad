@@ -16,7 +16,7 @@
         <URL value="@afficherlisteespacefxml.css" />
     </stylesheets>
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="746.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#84c2df" height="54.0" layoutY="11.0" stroke="BLACK" strokeType="INSIDE" width="746.0" />
       <TableView fx:id="tablespace" layoutX="17.0" layoutY="129.0" prefHeight="203.0" prefWidth="702.0">
         <columns>
           <TableColumn fx:id="idspace" prefWidth="49.0" text="id" />

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FrontEspaceFXMLController">
+    <children>
+        <Rectangle id="btn" arcHeight="5.0" arcWidth="5.0" height="607.0" layoutX="-1.0" layoutY="-2.0" stroke="#1129c4" strokeType="INSIDE" width="1501.0">
+         <fill>
+            <LinearGradient endX="0.26893940477660205" endY="1.0" startX="0.10984848484848475">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7256920337677002" green="0.819627046585083" blue="0.8631578683853149" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <AnchorPane layoutX="23.0" layoutY="91.0" prefHeight="479.0" prefWidth="851.0" stylesheets="@mainFormDesign.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="radius" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <ScrollPane fx:id="menuScrollPane" layoutX="2.0" layoutY="2.0" prefHeight="473.0" prefWidth="905.0" />
+            <GridPane fx:id="menuGridPane" prefHeight="18.0" prefWidth="103.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+            </GridPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="977.0" layoutY="110.0" prefHeight="460.0" prefWidth="500.0" stylesheets="@mainFormDesign.css">
+         <styleClass>
+            <String fx:value="white-bg" />
+            <String fx:value="radius" />
+            <String fx:value="shadow" />
+         </styleClass>
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="282.0" layoutX="97.0" layoutY="97.0" stroke="BLACK" strokeType="INSIDE" width="326.0" />
+              <ImageView fitHeight="282.0" fitWidth="312.0" layoutX="111.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@../../../../../../Downloads/logoo.png" />
+                  </image>
+              </ImageView>
+         </children>
+      </AnchorPane>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutY="28.0" stroke="#3d291d" strokeType="INSIDE" width="1501.0">
+            <fill>
+                <RadialGradient centerX="0.7411894609224428" centerY="0.5" radius="0.5">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.9325535893440247" green="0.9570630192756653" blue="0.9684210419654846" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.5177388191223145" green="0.7609681487083435" blue="0.8736842274665833" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </RadialGradient>
+            </fill></Rectangle>
+        <Text fill="#2f3459" layoutX="36.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Espaces">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+        </Text>
+      <Hyperlink layoutX="372.0" layoutY="39.0" onAction="#rediriger_categorie" text="Gestion locations">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Hyperlink>
+    </children>
+</Pane>

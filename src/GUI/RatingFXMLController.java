@@ -5,9 +5,12 @@
  */
 package GUI;
 
+import Entities.Utilisateur;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import org.controlsfx.control.Rating;
 
 /**
  * FXML Controller class
@@ -16,12 +19,11 @@ import javafx.fxml.Initializable;
  */
 public class RatingFXMLController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL location, ResourceBundle resources) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
     
 }

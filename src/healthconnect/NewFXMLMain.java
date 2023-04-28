@@ -23,7 +23,7 @@ Stage stage;
     public void start(Stage primaryStage) throws Exception {
        this.stage = primaryStage;
         try {
-            root = FXMLLoader.load(getClass().getResource("/GUI/CategorieLocationFXML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/GUI/FrontEspaceFXML.fxml"));
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }

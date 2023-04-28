@@ -136,7 +136,7 @@ public class AfficherListeEspaceFXMLController implements Initializable {
        SearchFilter();
      
 
-       //createPagination();
+       //pagination.setPageFactory(() -> this.createPagination());
       
 
 
@@ -213,21 +213,21 @@ private void trierParPrix() {
     tablespace.setItems(espacesSorted);
 }
 
-
-public void createPagination() {
-    tablespace.setItems(EspaceList);
-    int itemsPerPage = 2; // number of rows per page
-    pagination.setPageCount((int) Math.ceil((double) EspaceList.size() / itemsPerPage));
-    pagination.setPageFactory(new Callback<Integer, Node>() {
-        @Override
-        public Node call(Integer pageIndex) {
-            int fromIndex = pageIndex * itemsPerPage;
-            int toIndex = Math.min(fromIndex + itemsPerPage, EspaceList.size());
-            tablespace.setItems(FXCollections.observableArrayList(EspaceList.subList(fromIndex, toIndex)));
-            return tablespace;
+private void createPagination() {
+    int size = EspaceList.size();
+    pagination.setPageCount(size/10 + 1);
+    pagination.setPageFactory(pageIndex -> {
+        if (pageIndex >= pagination.getPageCount()) {
+            return null;
         }
+        int start = pageIndex * 10;
+        int end = Math.min(start + 10, size);
+        tablespace.setItems(FXCollections.observableArrayList(EspaceList.subList(start, end)));
+        return tablespace;
     });
 }
+
+
 
 
     private void afficherListeES() {
