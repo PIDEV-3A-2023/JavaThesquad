@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.Optional;
@@ -39,6 +40,8 @@ public class ProduitFrontController implements Initializable {
 
     @FXML
     private Pane menuForm;
+    @FXML
+    private Pane pane;
 
     @FXML
     private GridPane menuGridPane;
@@ -195,6 +198,23 @@ public class ProduitFrontController implements Initializable {
 
 
 
+    }
+    public void paiement(){
+
+        Pane newLoadedPane = null;
+        try {
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/Payment.fxml"));
+            newLoadedPane = loader.load();
+            PaymentController c = loader.getController();
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+        pane.getChildren().clear();
+        pane.getChildren().add(newLoadedPane);
     }
 
     @Override

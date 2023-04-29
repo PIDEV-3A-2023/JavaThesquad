@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionvente.gui.ProduitFrontController">
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionvente.gui.ProduitFrontController">
     <children>
         <Rectangle id="btn" arcHeight="5.0" arcWidth="5.0" height="607.0" layoutX="-1.0" layoutY="-2.0" stroke="#1129c4" strokeType="INSIDE" width="1501.0">
          <fill>
@@ -117,7 +117,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Button layoutX="1067.0" layoutY="445.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="345.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Pay" />
+      <Button layoutX="1067.0" layoutY="445.0" mnemonicParsing="false" onAction="#paiement" prefHeight="48.0" prefWidth="345.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Pay" />
       <Button fx:id="menu_removeBtn" layoutX="1108.0" layoutY="504.0" mnemonicParsing="false" onAction="#menuRemoveBtn" prefHeight="33.0" prefWidth="124.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Remove" />
       <Button layoutX="1251.0" layoutY="504.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="124.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Receipt" />
       <TableView fx:id="menuTableView" layoutX="999.0" layoutY="130.0" onMouseClicked="#menuselectedOrder" prefHeight="185.0" prefWidth="463.0">

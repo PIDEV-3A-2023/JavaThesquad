@@ -2,6 +2,8 @@ module com.example.gestionvente {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires stripe.java;
+    requires java.mail;
     exports com.example.gestionvente.healtConnect;
 
 

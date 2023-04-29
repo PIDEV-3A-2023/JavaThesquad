@@ -7,23 +7,32 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AfficheListeProduitController implements Initializable {
 
     ProduitService produitService = new ProduitService();
+
+    @FXML
+    private TextField search;
+    @FXML
+    private javafx.scene.control.ChoiceBox<String> ChoiceBox;
 
     @FXML
     private TableColumn<Produit, String> descriptionProduit;
@@ -121,6 +130,36 @@ public class AfficheListeProduitController implements Initializable {
 
     }
 
+    public void filteredSearch(){
+        List<Produit> list_user = produitService.afficher();
+        ObservableList<Produit> list = FXCollections.observableArrayList(list_user);
+        FilteredList<Produit> fluser = new FilteredList(list, p -> true);
+        search.textProperty().addListener((obs, oldValue, newValue) -> {
+            switch (ChoiceBox.getValue()) {
+                case "Nom":
+                    fluser.setPredicate(p -> p.getNom().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+                case "Categorie":
+                    fluser.setPredicate(p -> p.getCategory().getNom().toLowerCase().contains(newValue.toLowerCase().trim()));
+                    break;
+            }
+        });
+        table.setItems(fluser);
+        ChoiceBox.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal)
+                -> {
+            if (newVal != null) {
+                search.setText("");
+            }
+        });
+
+    }
+//        List<Produit> produitList=produitService.afficher();
+//        ObservableList<Produit>list =FXCollections.observableArrayList(produitList);
+//        FilteredList<Produit> filteredList=new FilteredList<>(list,p->true){
+//
+//        }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -150,6 +189,13 @@ public class AfficheListeProduitController implements Initializable {
 
             table.setItems(produits);
 
+            //recherche
+        ChoiceBox.getItems().addAll("Nom","Categorie");
+        ChoiceBox.setValue("Nom");
+        filteredSearch();
+
         }
+
+
     }
 

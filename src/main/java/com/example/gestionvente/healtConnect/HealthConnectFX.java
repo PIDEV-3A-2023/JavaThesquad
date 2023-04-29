@@ -26,6 +26,10 @@ public class HealthConnectFX extends Application {
             //root= FXMLLoader.load(getClass().getResource("/gui/AfficheListeProduit.fxml"));
             //System.out.println(getClass().getResource("/gui/AfficheListeCategorie.fxml"));
             //root= FXMLLoader.load(getClass().getResource("/gui/AfficheListeCategorie.fxml"));
+           // root= FXMLLoader.load(getClass().getResource("/gui/AfficheListeProduit.fxml"));
+            //root= FXMLLoader.load(getClass().getResource("/gui/Payment.fxml"));
+
+
 
             Scene scene = new Scene(root);
             stage.setScene(scene);
