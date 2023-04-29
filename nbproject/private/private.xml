@@ -3,17 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/AjouterCategorieLocationFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/CardEspaceFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/FrontEspaceFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/ModifierCategorieLocationFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Images/erreurcheck.png</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/RatingFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Entities/Utilisateur.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/FrontEspaceFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Entities/Rating.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Services/Emailsender.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/AjouterCategorieLocationFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/RatingFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/ModifierEspaceFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/AjouterCategorieLocationFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Entities/Espace.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Utils/DB.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/AfficherListeEspaceFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/AjouterEspaceFXMLController.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/AjouterCategorieLocationFXML.fxml</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/RatingFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/Images/logo.jpg</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/healthconnect/NewFXMLMain.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/JavaThesquad-locations/src/GUI/ModifierEspaceFXMLController.java</file>
         </group>
     </open-files>
 </project-private>

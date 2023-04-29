@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterCategorieLocationFXMLController">
@@ -14,27 +15,28 @@
         <URL value="@ajoutercategorielocationfxml.css" />
     </stylesheets>
    <children>
-      <AnchorPane fx:id="anchor" layoutX="-1.0" layoutY="-1.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;">
+      <AnchorPane fx:id="anchor" prefHeight="419.0" prefWidth="600.0" style="-fx-background-color: #b9d1dc;">
          <children>
-            <TextArea fx:id="textareaDesc" layoutX="166.0" layoutY="218.0" onKeyReleased="#verifierdesc" prefHeight="89.0" prefWidth="209.0" />
-            <Button fx:id="revenir" layoutX="274.0" layoutY="348.0" mnemonicParsing="false" onAction="#redirigerliste" text="revenir" />
-            <Label fx:id="labelcheckn" layoutX="137.0" layoutY="144.0" prefHeight="18.0" prefWidth="139.0" />
-            <ImageView fx:id="checkdesc" fitHeight="35.0" fitWidth="32.0" layoutX="384.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="desclabel" layoutX="171.0" layoutY="308.0" prefHeight="18.0" prefWidth="198.0" />
-            <Button fx:id="btn" layoutX="206.0" layoutY="348.0" mnemonicParsing="false" onAction="#ajoutCategorielocation" text="Ajouter" />
-            <ImageView fx:id="checknom" fitHeight="35.0" fitWidth="32.0" layoutX="341.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true" />
-            <TextField fx:id="txtfieldNom" layoutX="135.0" layoutY="113.0" onKeyReleased="#verifiernom" prefHeight="26.0" prefWidth="198.0" />
-            <Label fx:id="titrecatajout" layoutX="39.0" layoutY="27.0" text="Ajouter catégorie">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7fbdd9" height="298.0" layoutX="25.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" width="548.0" />
+            <TextArea fx:id="textareaDesc" layoutX="177.0" layoutY="198.0" onKeyReleased="#verifierdesc" prefHeight="89.0" prefWidth="209.0" />
+            <Button fx:id="revenir" layoutX="274.0" layoutY="335.0" mnemonicParsing="false" onAction="#redirigerliste" prefHeight="26.0" prefWidth="65.0" text="revenir" />
+            <Label fx:id="labelcheckn" layoutX="177.0" layoutY="139.0" prefHeight="18.0" prefWidth="210.0" />
+            <ImageView fx:id="checkdesc" fitHeight="35.0" fitWidth="32.0" layoutX="393.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="desclabel" layoutX="177.0" layoutY="297.0" prefHeight="18.0" prefWidth="198.0" />
+            <Button fx:id="btn" layoutX="186.0" layoutY="335.0" mnemonicParsing="false" onAction="#ajoutCategorielocation" prefHeight="26.0" prefWidth="72.0" text="Ajouter" />
+            <ImageView fx:id="checknom" fitHeight="35.0" fitWidth="32.0" layoutX="387.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="txtfieldNom" layoutX="174.0" layoutY="107.0" onKeyReleased="#verifiernom" prefHeight="26.0" prefWidth="210.0" />
+            <Label fx:id="titrecatajout" layoutX="158.0" layoutY="32.0" text="Ajouter catégorie">
                <font>
-                  <Font size="29.0" />
+                  <Font name="Arial Rounded MT Bold" size="29.0" />
                </font>
             </Label>
-            <Label fx:id="labelnom" layoutX="18.0" layoutY="108.0" text="Nom :">
+            <Label fx:id="labelnom" layoutX="70.0" layoutY="103.0" text="Nom :">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="labeldescription" layoutX="18.0" layoutY="209.0" text="Description : ">
+            <Label fx:id="labeldescription" layoutX="32.0" layoutY="207.0" text="Description : ">
                <font>
                   <Font size="24.0" />
                </font>

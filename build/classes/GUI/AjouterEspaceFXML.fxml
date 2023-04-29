@@ -9,16 +9,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorajes" prefHeight="536.0" prefWidth="678.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEspaceFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchorajes" prefHeight="536.0" prefWidth="678.0" style="-fx-background-color: #b9d1dc;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterEspaceFXMLController">
     <stylesheets>
         <URL value="@ajouterespacefxml.css" />
     </stylesheets>
    <children>
-      <Label fx:id="labelajoutes" layoutX="63.0" layoutY="14.0" text="Ajouter espace">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7fbdd9" height="459.0" layoutX="12.0" layoutY="46.0" stroke="BLACK" strokeType="INSIDE" width="651.0" />
+      <Label fx:id="labelajoutes" layoutX="265.0" layoutY="7.0" text="Ajouter espace">
          <font>
-            <Font size="22.0" />
+            <Font name="Arial Rounded MT Bold" size="22.0" />
          </font>
       </Label>
       <TextField fx:id="textfieldnom" layoutX="99.0" layoutY="60.0" prefHeight="25.0" prefWidth="174.0" />
@@ -67,12 +69,21 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="btna" layoutX="149.0" layoutY="448.0" mnemonicParsing="false" onAction="#ajoutEspace" prefHeight="25.0" prefWidth="145.0" text="enregistrer" />
+      <Button fx:id="btna" layoutX="149.0" layoutY="448.0" mnemonicParsing="false" onAction="#ajoutEspace" prefHeight="26.0" prefWidth="124.0" style="-fx-background-color: #D3D3D3;" text="enregistrer">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></Button>
       <TextField fx:id="imagetf" layoutX="484.0" layoutY="290.0" />
       <TextArea fx:id="textareacarac" layoutX="161.0" layoutY="109.0" prefHeight="56.0" prefWidth="200.0" />
       <TextField fx:id="dispo" layoutX="112.0" layoutY="181.0" prefHeight="25.0" prefWidth="174.0" />
-      <Button layoutX="519.0" layoutY="354.0" mnemonicParsing="false" onAction="#filechooseImage" text="choisir file" />
-      <Button fx:id="btnannuler" layoutX="323.0" layoutY="448.0" mnemonicParsing="false" onAction="#redirigerliste" text="annuler" />
+      <Button layoutX="519.0" layoutY="354.0" mnemonicParsing="false" onAction="#filechooseImage" text="choisir file">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnannuler" layoutX="298.0" layoutY="448.0" mnemonicParsing="false" onAction="#redirigerliste" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #D3D3D3;" text="annuler">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font></Button>
       <ImageView fx:id="nomcheckver" fitHeight="26.0" fitWidth="26.0" layoutX="278.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="nomchecktxt" layoutX="98.0" layoutY="86.0" prefHeight="18.0" prefWidth="174.0" />
       <Label fx:id="checkdatetxt" layoutX="135.0" layoutY="294.0" prefHeight="18.0" prefWidth="166.0" />

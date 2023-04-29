@@ -5,34 +5,40 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorm" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.ModifierCategorieLocationFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchorm" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b9d1dc;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ModifierCategorieLocationFXMLController">
     <stylesheets>
         <URL value="@modifiercategorielocationfxml.css" />
     </stylesheets>
    <children>
-      <Label fx:id="labelmod" layoutX="59.0" layoutY="42.0" text="Modifier catégorie">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7fbdd9" height="274.0" layoutX="31.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="534.0" />
+      <Label fx:id="labelmod" layoutX="186.0" layoutY="25.0" text="Modifier catégorie">
          <font>
-            <Font size="24.0" />
+            <Font name="Arial Rounded MT Bold" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="labelmod" layoutX="40.0" layoutY="100.0" text="Label :">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <Label fx:id="labeldescc" layoutX="40.0" layoutY="183.0" text="Description :">
+      <Label fx:id="labelmod" layoutX="98.0" layoutY="86.0" text="Label :">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="txtfieldNommod" layoutX="186.0" layoutY="105.0" prefHeight="25.0" prefWidth="196.0" />
-      <TextArea fx:id="textareaDescmod" layoutX="186.0" layoutY="148.0" prefHeight="100.0" prefWidth="200.0" />
-      <Button fx:id="btnmod" layoutX="186.0" layoutY="289.0" mnemonicParsing="false" onAction="#modifier" text="modifier" />
-      <Button fx:id="revenirbtn" layoutX="267.0" layoutY="289.0" mnemonicParsing="false" text="revenir" onAction="#redirigerlistec" />
-      <ImageView fitHeight="129.0" fitWidth="146.0" layoutX="436.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="labeldescc" layoutX="58.0" layoutY="150.0" text="Description :">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtfieldNommod" layoutX="202.0" layoutY="91.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextArea fx:id="textareaDescmod" layoutX="200.0" layoutY="150.0" prefHeight="100.0" prefWidth="200.0" />
+      <Button fx:id="btnmod" layoutX="202.0" layoutY="277.0" mnemonicParsing="false" onAction="#modifier" prefHeight="34.0" prefWidth="73.0" style="-fx-background-color: #D3D3D3;" text="modifier">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="revenirbtn" layoutX="331.0" layoutY="277.0" mnemonicParsing="false" onAction="#redirigerlistec" prefHeight="34.0" prefWidth="66.0" style="-fx-background-color: #D3D3D3;" text="revenir">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

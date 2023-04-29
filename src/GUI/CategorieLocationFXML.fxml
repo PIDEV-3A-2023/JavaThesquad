@@ -5,36 +5,63 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorl" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B0E0E6;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CategorieLocationFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchorl" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #b9d1dc;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CategorieLocationFXMLController">
     <stylesheets>
         <URL value="@categorielocationfxml.css" />
     </stylesheets>
    <children>
-      <Label fx:id="titrecat" layoutX="41.0" layoutY="40.0" text="Liste des catégories">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutY="23.0" stroke="#3d291d" strokeType="INSIDE" width="663.0">
+         <fill>
+            <RadialGradient centerX="0.7411894609224428" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9325535893440247" green="0.9570630192756653" blue="0.9684210419654846" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5176470875740051" green="0.7607843279838562" blue="0.8745098114013672" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="titrecat" layoutX="196.0" layoutY="27.0" text="Liste des catégories">
          <font>
             <Font size="29.0" />
          </font>
       </Label>
-      <ImageView fx:id="image" fitHeight="114.0" fitWidth="118.0" layoutX="482.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../324773754_2806919942771426_4179899976723407547_n%20(2).png" />
-         </image>
-      </ImageView>
-      <TableView fx:id="tableviewcat" layoutX="43.0" layoutY="114.0" prefHeight="200.0" prefWidth="367.0">
+      <TableView fx:id="tableviewcat" layoutX="55.0" layoutY="86.0" prefHeight="213.0" prefWidth="550.0">
         <columns>
           <TableColumn fx:id="idcat" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="nomcat" prefWidth="144.0" text="nom" />
-            <TableColumn fx:id="descriptioncat" prefWidth="147.0" text="Description" />
+          <TableColumn fx:id="nomcat" prefWidth="188.0" text="nom" />
+            <TableColumn fx:id="descriptioncat" prefWidth="284.0" text="Description" />
         </columns>
       </TableView>
-      <Button fx:id="btnajouter" layoutX="494.0" layoutY="138.0" mnemonicParsing="false" onAction="#redirect" prefHeight="25.0" prefWidth="70.0" text="ajouter" />
-      <Button fx:id="btnmodifier" layoutX="494.0" layoutY="175.0" mnemonicParsing="false" onAction="#redirecttoupdate" prefHeight="25.0" prefWidth="70.0" text="modifier" />
-      <Button fx:id="btnsupprimer" layoutX="494.0" layoutY="214.0" mnemonicParsing="false" onAction="#supprimer" text="supprimer" />
-      <Button fx:id="btnespace" layoutX="503.0" layoutY="334.0" mnemonicParsing="false" onAction="#redirectespace" text="espace" />
+      <Button fx:id="btnajouter" layoutX="144.0" layoutY="321.0" mnemonicParsing="false" onAction="#redirect" prefHeight="25.0" prefWidth="70.0" text="ajouter">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnmodifier" layoutX="268.0" layoutY="321.0" mnemonicParsing="false" onAction="#redirecttoupdate" prefHeight="26.0" prefWidth="78.0" text="modifier">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnsupprimer" layoutX="392.0" layoutY="321.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="30.0" prefWidth="96.0" text="supprimer">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnespace" layoutX="577.0" layoutY="347.0" mnemonicParsing="false" onAction="#redirectespace" prefHeight="26.0" prefWidth="63.0" style="-fx-background-color: #84c2df;" text="espace">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>
