@@ -11,7 +11,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -33,6 +36,8 @@ public class PaymentController implements Initializable {
     private TextField expanneeField;
     @FXML
     private TextField cvvField;
+    @FXML
+    private AnchorPane pane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -55,12 +60,11 @@ public class PaymentController implements Initializable {
         servicePayment = new ServicePaymentStripe(email, nom, 250, numCard, expMois, exAnnee, cvv);
         // Récupérer la valeur de l'e-mail du champ de saisie
 
-        String message = "Squad team \n"
+        String message = "Health Connect \n"
                 + "\n"
                 + "Votre paiement a  ete  effectué :\n"
                 + "\n"
                 +  "le nom  : " + nom  + "\n"
-                + "l'email  : " + prix + "\n"
 
                 //+ "We are pleased to inform you that your reservation has been successfully processed, and we have reserved the required number of seats for you. Your confirmation number is [Enter confirmation number].\n"
                 + "\n";
@@ -88,6 +92,22 @@ public class PaymentController implements Initializable {
 
         }
 
+    }
+    public void back(){
+        Pane newLoadedPane = null;
+        try {
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ProduitFront.fxml"));
+            newLoadedPane = loader.load();
+            ProduitFrontController c = loader.getController();
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+        pane.getChildren().clear();
+        pane.getChildren().add(newLoadedPane);
     }
 
     public boolean getReturn() {

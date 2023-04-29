@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -62,8 +61,11 @@
             <String fx:value="radius" />
             <String fx:value="shadow" />
          </styleClass>
+         <children>
+            <Button layoutX="136.0" layoutY="297.0" mnemonicParsing="false" onAction="#paiement" prefHeight="48.0" prefWidth="310.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Pay" />
+            <Button fx:id="menu_removeBtn" layoutX="223.0" layoutY="355.0" mnemonicParsing="false" onAction="#menuRemoveBtn" prefHeight="33.0" prefWidth="124.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Remove" />
+         </children>
       </AnchorPane>
-      <TextField layoutX="1280.0" layoutY="359.0" prefHeight="25.0" prefWidth="167.0" promptText="\$0.0" />
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutY="28.0" stroke="#3d291d" strokeType="INSIDE" width="1501.0">
             <fill>
                 <RadialGradient centerX="0.7411894609224428" centerY="0.5" radius="0.5">
@@ -102,24 +104,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="1199.0" layoutY="357.0" text="Amount:">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="1199.0" layoutY="393.0" text="Change">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Label layoutX="1271.0" layoutY="393.0" prefHeight="28.0" prefWidth="214.0" text="\$0.0">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-      <Button layoutX="1067.0" layoutY="445.0" mnemonicParsing="false" onAction="#paiement" prefHeight="48.0" prefWidth="345.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Pay" />
-      <Button fx:id="menu_removeBtn" layoutX="1108.0" layoutY="504.0" mnemonicParsing="false" onAction="#menuRemoveBtn" prefHeight="33.0" prefWidth="124.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Remove" />
-      <Button layoutX="1251.0" layoutY="504.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="124.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Receipt" />
+      <Button layoutX="267.0" layoutY="34.0" mnemonicParsing="false" onAction="#back" prefHeight="33.0" prefWidth="124.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Back " />
       <TableView fx:id="menuTableView" layoutX="999.0" layoutY="130.0" onMouseClicked="#menuselectedOrder" prefHeight="185.0" prefWidth="463.0">
         <columns>
           <TableColumn fx:id="menuColProduitName" prefWidth="149.60009765625" text="Produit" />

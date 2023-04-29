@@ -51,11 +51,14 @@ public class cardProductController implements Initializable {
     private int qty;
     private Alert alert;
     private String prod_image;
+    ProduitFrontController ps=new ProduitFrontController();
+
 
     public cardProductController(){
         conx= MyDB.getInstance().getConx();
 
     }
+
 
 //    public void setData(Produit prodData){
 //        this.prodData=prodData;
@@ -123,6 +126,8 @@ public void setData(Produit prodData) {
 
         }
     }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

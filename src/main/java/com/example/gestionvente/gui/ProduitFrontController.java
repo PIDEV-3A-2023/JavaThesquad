@@ -199,6 +199,25 @@ public class ProduitFrontController implements Initializable {
 
 
     }
+
+    public void back(){
+        Pane newLoadedPane = null;
+        try {
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficheListeProduit.fxml"));
+            newLoadedPane = loader.load();
+            AfficheListeProduitController c = loader.getController();
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+        pane.getChildren().clear();
+        pane.getChildren().add(newLoadedPane);
+    }
+
+
     public void paiement(){
 
         Pane newLoadedPane = null;

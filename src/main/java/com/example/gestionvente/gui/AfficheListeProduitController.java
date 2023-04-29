@@ -30,6 +30,9 @@ public class AfficheListeProduitController implements Initializable {
     ProduitService produitService = new ProduitService();
 
     @FXML
+    private Pane pane;
+
+    @FXML
     private TextField search;
     @FXML
     private javafx.scene.control.ChoiceBox<String> ChoiceBox;
@@ -158,6 +161,24 @@ public class AfficheListeProduitController implements Initializable {
 //        FilteredList<Produit> filteredList=new FilteredList<>(list,p->true){
 //
 //        }
+
+    public void panier(){
+        Pane newLoadedPane = null;
+        try {
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/ProduitFront.fxml"));
+            newLoadedPane = loader.load();
+            ProduitFrontController c = loader.getController();
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+        pane.getChildren().clear();
+        pane.getChildren().add(newLoadedPane);
+    }
+
 
 
     @Override

@@ -4,15 +4,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionvente.gui.PaymentController">
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="586.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionvente.gui.PaymentController">
     <children>
         <GridPane layoutX="128.0" layoutY="91.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
@@ -24,7 +30,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#Payer" prefHeight="39.0" prefWidth="81.0" style="-fx-background-color: #c00000;" text="Payer" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
+                <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#Payer" prefHeight="40.0" prefWidth="542.0" styleClass="btn" stylesheets="@cardDesign.css" text="Payer" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -101,5 +107,29 @@
                 </VBox>
             </children>
         </GridPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="48.0" layoutX="-2.0" layoutY="38.0" stroke="#3d291d" strokeType="INSIDE" width="465.0">
+         <fill>
+            <RadialGradient centerX="0.7411894609224428" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.22128655016422272" green="0.30744248628616333" blue="0.34736841917037964" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.5293020009994507" green="0.6000000238418579" blue="0.5099999904632568" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Button layoutX="401.0" layoutY="50.0" mnemonicParsing="false" onAction="#back" prefWidth="62.0" styleClass="btn" stylesheets="@cardDesign.css" text="back" />
+      <ImageView fitHeight="97.0" fitWidth="116.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/HealthConnect.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
