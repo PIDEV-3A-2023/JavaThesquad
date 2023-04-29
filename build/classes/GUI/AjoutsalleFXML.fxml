@@ -5,13 +5,15 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="anchhr" prefHeight="510.0" prefWidth="735.0" style="-fx-background-color: #77b5fE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjoutsalleFXMLController">
    <children>
-      <Label fx:id="aclabel" layoutX="252.0" layoutY="49.0" prefHeight="36.0" prefWidth="275.0" text="Ajouter une salle">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c9e1ff" height="366.0" layoutX="96.0" layoutY="85.0" stroke="BLACK" strokeType="INSIDE" width="554.0" />
+      <Label fx:id="aclabel" layoutX="246.0" layoutY="42.0" prefHeight="36.0" prefWidth="275.0" text="Ajouter une salle">
          <font>
-            <Font name="Book Antiqua" size="26.0" />
+            <Font name="Bodoni MT Black Italic" size="26.0" />
          </font>
       </Label>
       <Label fx:id="nom" layoutX="170.0" layoutY="126.0" text="Nom :">
@@ -38,13 +40,13 @@
          </font>
       </Label>
       <ComboBox fx:id="comboac" layoutX="339.0" layoutY="328.0" prefWidth="150.0" />
-      <Button fx:id="ajout" layoutX="534.0" layoutY="402.0" mnemonicParsing="false" onAction="#ajoutSalle" prefHeight="36.0" prefWidth="98.0" text="Ajouter">
+      <Button fx:id="ajout" layoutX="422.0" layoutY="395.0" mnemonicParsing="false" onAction="#ajoutSalle" prefHeight="36.0" prefWidth="98.0" text="Ajouter">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="revenir" layoutX="414.0" layoutY="402.0" mnemonicParsing="false" onAction="#redirect" prefHeight="36.0" prefWidth="98.0" text="Retour">
+      <Button fx:id="revenir" layoutX="290.0" layoutY="395.0" mnemonicParsing="false" onAction="#redirect" prefHeight="36.0" prefWidth="98.0" text="Retour">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font></Button>
    </children>
 </AnchorPane>

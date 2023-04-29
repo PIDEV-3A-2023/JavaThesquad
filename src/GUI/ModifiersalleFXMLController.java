@@ -14,9 +14,11 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -24,6 +26,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import services.AcademieService;
 import services.SalleService;
 
@@ -155,6 +159,20 @@ public class ModifiersalleFXMLController implements Initializable {
     alert.setHeaderText(null);
     alert.setContentText("Voulez vous confirmer la modification?");
     alert.showAndWait();
+     Notifications notificationBuilder = Notifications.create()
+    .title("Salle modifié avec succés ")
+    .text("les salles sont modifiées ")
+    .hideAfter(Duration.seconds(5))
+    .position(Pos.CENTER)
+    .graphic(null)
+    .darkStyle()
+    .onAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            // code à exécuter lorsqu'on clique sur la notification
+        }
+    });
+notificationBuilder.showInformation(); 
 }
 
 

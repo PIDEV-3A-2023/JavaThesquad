@@ -7,49 +7,51 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="531.0" prefWidth="782.0" style="-fx-background-color: #77b5fE;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AcademieFXMLController">
+<AnchorPane id="AnchorPane" fx:id="anchor" prefHeight="531.0" prefWidth="892.0" style="-fx-background-color: #77b5fE;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AcademieFXMLController">
     <stylesheets>
         <URL value="@academiefxml.css" />
     </stylesheets>
    <children>
-      <TableView fx:id="table" layoutX="31.0" layoutY="115.0" prefHeight="353.0" prefWidth="487.0">
+      <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="#e2fcfb" height="45.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" width="892.0" />
+      <TableView fx:id="table" layoutX="84.0" layoutY="117.0" prefHeight="352.0" prefWidth="694.0">
         <columns>
-          <TableColumn fx:id="ida" prefWidth="75.0" text="id" />
-          <TableColumn fx:id="nomac" prefWidth="83.1999740600586" text="Nom" />
-            <TableColumn fx:id="adc" prefWidth="84.79998779296875" text="Adresse" />
-            <TableColumn fx:id="numac" prefWidth="99.199951171875" text="Numtel" />
-            <TableColumn fx:id="spac" prefWidth="144.00001831054686" text="Sport proposé" />
+          <TableColumn fx:id="ida" prefWidth="83.20000457763672" text="id" />
+          <TableColumn fx:id="nomac" prefWidth="126.39999389648438" text="Nom" />
+            <TableColumn fx:id="adc" prefWidth="152.79998779296875" text="Adresse" />
+            <TableColumn fx:id="numac" prefWidth="158.39999389648438" text="Numtel" />
+            <TableColumn fx:id="spac" prefWidth="178.40008544921875" text="Sport proposé" />
         </columns>
       </TableView>
-      <Label fx:id="liste" layoutX="73.0" layoutY="18.0" prefHeight="63.0" prefWidth="260.0" text="Liste des académies">
+      <Label fx:id="liste" layoutX="72.0" layoutY="5.0" prefHeight="63.0" prefWidth="260.0" text="Liste des académies">
          <font>
             <Font name="Bodoni MT Black" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnajout" layoutX="593.0" layoutY="198.0" mnemonicParsing="false" onAction="#redirect" prefHeight="26.0" prefWidth="94.0" text="Ajouter ">
+      <Button fx:id="btnajout" layoutX="274.0" layoutY="490.0" mnemonicParsing="false" onAction="#redirect" prefHeight="26.0" prefWidth="94.0" text="Ajouter ">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnmodifier" layoutX="593.0" layoutY="253.0" mnemonicParsing="false" onAction="#redirecttomodif" prefHeight="26.0" prefWidth="94.0" text="Modifier">
+      <Button fx:id="btnmodifier" layoutX="391.0" layoutY="490.0" mnemonicParsing="false" onAction="#redirecttomodif" prefHeight="26.0" prefWidth="94.0" text="Modifier">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="btnsupprimer" layoutX="593.0" layoutY="306.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="94.0" text="Supprimer">
+      <Button fx:id="btnsupprimer" layoutX="505.0" layoutY="490.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="94.0" text="Supprimer">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="trier" layoutX="561.0" layoutY="142.0" mnemonicParsing="false" onAction="#trierParNom" text="Trier académies selon nom" />
-      <TextField fx:id="recherche" layoutX="519.0" layoutY="50.0" />
-      <Label fx:id="labelrech" layoutX="424.0" layoutY="53.0" prefHeight="18.0" prefWidth="78.0" text="Rechercher">
+      <Button fx:id="trier" layoutX="116.0" layoutY="81.0" mnemonicParsing="false" onAction="#trierParNom" text="Trier académies selon nom" />
+      <TextField fx:id="recherche" layoutX="543.0" layoutY="81.0" prefHeight="26.0" prefWidth="215.0" />
+      <Label fx:id="labelrech" layoutX="465.0" layoutY="84.0" prefHeight="18.0" prefWidth="78.0" text="Rechercher">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="exportxl" layoutX="568.0" layoutY="359.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Exporter un fichier Excel" />
+      <Button fx:id="exportxl" layoutX="629.0" layoutY="490.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Exporter un fichier Excel" />
    </children>
 </AnchorPane>

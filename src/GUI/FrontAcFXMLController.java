@@ -7,6 +7,7 @@ package GUI;
 
 
 import entities.Academie;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -14,14 +15,19 @@ import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 import services.AcademieService;
 import utils.MyDB;
 
@@ -92,7 +98,7 @@ public class FrontAcFXMLController implements Initializable {
                 AnchorPane pane=loader.load();
                 CardacademieControllerFXMLController cardA=loader.getController(); 
                 cardA.setData(cardListData.get(q));
-                if(column==2){
+                if(column==3){
                     column=0;
                     row+=1;
                 }
@@ -102,6 +108,48 @@ public class FrontAcFXMLController implements Initializable {
                 exception.printStackTrace();
             }
         }
+    }
+    
+   @FXML
+    private void redirigerback(ActionEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/AcademieFXML.fxml"));
+    Parent root;
+    try {
+    root = loader.load();
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.show();
+    } catch (IOException e) {
+    e.printStackTrace();
+    }
+    }
+    
+     @FXML
+    private void redirigerbacksalle(ActionEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/SalleFXML.fxml"));
+    Parent root;
+    try {
+    root = loader.load();
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.show();
+    } catch (IOException e) {
+    e.printStackTrace();
+    }
+    }
+    
+      @FXML
+    private void redirigerbackcours(ActionEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/CoursFXML.fxml"));
+    Parent root;
+    try {
+    root = loader.load();
+    Stage stage = new Stage();
+    stage.setScene(new Scene(root));
+    stage.show();
+    } catch (IOException e) {
+    e.printStackTrace();
+    }
     }
     
 }

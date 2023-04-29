@@ -18,6 +18,13 @@ public class Salle {
     public Salle() {
     }
 
+    public Salle(int id, String nom, int capacite, int equipement) {
+        this.id = id;
+        this.nom = nom;
+        this.capacite = capacite;
+        this.equipement = equipement;
+    }
+
     public Salle(int id, String nom, int capacite, int equipement, Academie academie) {
         this.id = id;
         this.nom = nom;

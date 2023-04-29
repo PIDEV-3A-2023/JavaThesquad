@@ -47,7 +47,6 @@
                 <HBox fx:id="snip2" alignment="BOTTOM_RIGHT" prefHeight="48.0" prefWidth="230.0">
                <children>
                   <Button fx:id="abonne" alignment="BOTTOM_RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="82.0" styleClass="btn" stylesheets="@cardDesign.css" text="S'abonner" />
-                        <Button fx:id="addBtn" mnemonicParsing="false" prefHeight="32.0" prefWidth="82.0" styleClass="btn" stylesheets="@cardDesign.css" text="Détails" />
                </children>
                 </HBox>
             </children>

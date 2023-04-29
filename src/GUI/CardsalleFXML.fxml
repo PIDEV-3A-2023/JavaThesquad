@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="card_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="230.0" stylesheets="@cardDesign.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CardacademieControllerFXMLController">
+<AnchorPane fx:id="card_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="230.0" stylesheets="@cardDesign.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CardsalleFXMLController">
     <children>
         <VBox layoutX="65.0" layoutY="-10.0" prefHeight="180.0" prefWidth="230.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <HBox fx:id="snip" alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="230.0">
                     <children>
-                        <Label fx:id="ac_name" prefHeight="21.0" prefWidth="151.0" text="Spaghetti">
+                        <Label fx:id="nomsalle" prefHeight="21.0" prefWidth="151.0" text="Nom">
                             <font>
                                 <Font size="15.0" />
                             </font>
@@ -27,17 +27,17 @@
                 </HBox>
                 <AnchorPane fx:id="contenu" prefHeight="101.0" prefWidth="230.0" style="-fx-background-color: #87CEFA;">
                <children>
-                  <Label fx:id="adresseLabel" layoutX="22.0" layoutY="3.0" prefHeight="21.0" prefWidth="151.0" text="Spaghetti">
+                  <Label fx:id="capaciteLabel" layoutX="22.0" layoutY="3.0" prefHeight="21.0" prefWidth="151.0" text="Capacité">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="numtelLabel" layoutX="22.0" layoutY="25.0" prefHeight="21.0" prefWidth="151.0" text="Spaghetti">
+                  <Label fx:id="equipementLabel" layoutX="22.0" layoutY="25.0" prefHeight="21.0" prefWidth="151.0" text="Equipement">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="sportproposeLabel" layoutX="22.0" layoutY="47.0" prefHeight="21.0" prefWidth="151.0" text="Spaghetti">
+                  <Label fx:id="nombrepartabel" layoutX="22.0" layoutY="47.0" prefHeight="22.0" prefWidth="179.0" text="Nombre des participants">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -46,7 +46,7 @@
                 </AnchorPane>
                 <HBox fx:id="snip2" alignment="BOTTOM_RIGHT" prefHeight="48.0" prefWidth="230.0">
                <children>
-                  <Button fx:id="abonne" alignment="BOTTOM_RIGHT" mnemonicParsing="false" prefHeight="32.0" prefWidth="82.0" styleClass="btn" stylesheets="@cardDesign.css" text="S'abonner" />
+                        <Button fx:id="addBtn" mnemonicParsing="false" onAction="" prefHeight="32.0" prefWidth="82.0" styleClass="btn" stylesheets="@cardDesign.css" text="Détails" />
                </children>
                 </HBox>
             </children>

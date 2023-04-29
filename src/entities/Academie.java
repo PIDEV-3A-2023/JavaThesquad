@@ -5,6 +5,8 @@
  */
 package entities;
 
+import java.util.List;
+
 /**
  *
  * @author LENOVO
@@ -15,6 +17,8 @@ public class Academie {
     private String adresse;
     private String numtel;
     private String sportpropose;
+    List <Salle> salles;
+   
 
     public Academie() {
     }
@@ -32,6 +36,14 @@ public class Academie {
         this.adresse = adresse;
         this.numtel = numtel;
         this.sportpropose = sportpropose;
+    }
+
+    public Academie(String nom, String adresse, String numtel, String sportpropose, List<Salle> salles) {
+        this.nom = nom;
+        this.adresse = adresse;
+        this.numtel = numtel;
+        this.sportpropose = sportpropose;
+        this.salles = salles;
     }
 
     public int getId() {
@@ -81,6 +93,16 @@ public class Academie {
         this.sportpropose = sportpropose;
     }
 
+    public List<Salle> getSalles() {
+        return salles;
+    }
+
+    public void setSalles(List<Salle> salles) {
+        this.salles = salles;
+    }
+
+    
+    
     @Override
     public String toString() {
         return "Academie{" + ", nom=" + nom  + '}';

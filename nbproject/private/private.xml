@@ -3,23 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/entities/Academie.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/ModifiersalleFXMLController.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/SalleFXMLController.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/entities/Salle.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/ModifieracademieFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/AcademieFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/FrontAcFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/CardacademieControllerFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/CardacademieControllerFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/AjoutcoursFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/FrontsalleFXML.fxml</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/services/AcademieService.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/AjoutacademieFXMLController.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/entities/Cours.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/CoursFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/services/CoursService.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/AjoutsalleFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/FrontAcFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/services/IAcademie.java</file>
-            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/healthconnect/NewfXMLMain.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/CardsalleFXMLController.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/ModifiercoursFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/FrontsalleFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/CardsalleFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/entities/Academie.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/SalleFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/entities/Salle.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/ModifieracademieFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/CoursFXML.fxml</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/GUI/AjoutacademieFXMLController.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/entities/Cours.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/services/SalleService.java</file>
+            <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/healthconnect/NewfXMLMain.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/healthconnect/Healthconnect.java</file>
             <file>file:/C:/Users/LENOVO/OneDrive/Documents/NetBeansProjects/healthconnect/src/utils/MyDB.java</file>
         </group>

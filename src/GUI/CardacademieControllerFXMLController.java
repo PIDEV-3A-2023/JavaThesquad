@@ -6,16 +6,20 @@
 package GUI;
 
 import entities.Academie;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import utils.MyDB;
 
 /**
@@ -82,5 +86,31 @@ public class CardacademieControllerFXMLController implements Initializable {
 
 
 }
-    
+       public void addBtn(ActionEvent e){
+        Pane newLoadedPane = null;
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/GUI/FrontsalleFXML.fxml"));
+         
+            
+            newLoadedPane = loader.load();
+            FrontsalleFXMLController ss = loader.getController();
+          
+
+        } catch (IOException e1) {
+            // TODO Auto-generated catc1h block
+            e1.printStackTrace();
+        }
+       if (newLoadedPane != null) {
+    card_form.getChildren().clear();
+    card_form.getChildren().add(newLoadedPane);
+} else {
+    System.out.println("newLoadedPane is null");
 }
+
+       
+
+    }}
+
+
+
